@@ -1,0 +1,21 @@
+img{
+    width:300px;
+    height:150px;
+}
+#Logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#frame{
+    border-style: solid;
+    border-color: black;
+    margin: auto;
+    width: 50%;
+    background-color: #C4c4c4;
+    height: 200px;
+}
+.Login{
+    text-align: center;
+}
+asdadas
