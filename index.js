@@ -30,7 +30,7 @@ try {
     document.getElementById('numberOfStudent').addEventListener('keyup', ()=>{
 
         let numberOfStudent = document.getElementById('numberOfStudent').value;
-        if(numberOfStudent > 0 ){
+        if(numberOfStudent >= 0){
             document.getElementById('student-form').innerHTML = '';
             for (let i = 1; i <= numberOfStudent; i++) {
                 let student = 'students' + i;

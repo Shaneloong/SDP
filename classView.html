@@ -20,7 +20,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="container-fluid">
-                <button class="btn mx-1 flex-button btn-outline-secondary" id="sidebar-toggler"><box-icon name='menu'></box-icon></button>
+                <button class="btn mx-3 flex-button btn-outline-secondary" id="sidebar-toggler"><box-icon name='menu'></box-icon></button>
                 <div class="me-auto flex-group">
                     <a class="navbar-brand" href="#"><img src="Full_Final_Neptune_logo.png" class="logo" alt=""></a>
                     <ul class="navbar-nav">
@@ -64,17 +64,81 @@
         <div class="flex-group justify-content-between">
             <div>
                 <h2>Class ID</h2>
-                <h5>Lecturer Information</h5>
+                <h5 class="my-3">Lecturer Information</h5>
             </div>
             <div>
-                <button class="btn btn-primary">Assign Lecturer</button>
+                <!-- Modal Toggler -->
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Assign Lecturer</button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Assign Lecturer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="fluid-container rounded w-50 bg-secondary">
+            <div class="flex-group">
+                <p class="p-3 m-0 text-white">
+                    Lecturer ID: Lecture Name
+                </p>
+                <a href="" class="btn btn-outline-light ms-auto me-4"><i class="uil uil-trash-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="flex-group justify-content-between">
+            <div>
+                <h5 class="my-4">Intake Information</h5>
+            </div>
+            <div>
+                <!-- Modal Toggler -->
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Enrol Intake</button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Enrol Intake</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                </div>
             </div>
         </div>
         
-        
-            
-
-            
+        <table class="table table-hover w-50 align-middle">
+            <thead>
+                <td>Intake ID</td>
+                <td class="w-25"></td>
+            </thead>
+            <tr>
+                <td>UCDF2005ICT(SE)</td>
+                <td class="w-25"><a href="" class="btn btn-outline-secondary"><i class="uil uil-trash-alt"></i></a></td>
+            </tr>
+        </table>
     </main>
 
     <footer>
