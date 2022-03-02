@@ -14,8 +14,10 @@
     align-items: center;
 }
 
+
+/* Navigation bar and sidebar */
 nav{
-    background: #C3C3C3;
+    background: #E8E1D9;
     height: 75px;
 }
 
@@ -41,6 +43,27 @@ nav{
     height: calc(100vh - 75px);
     transition: 0.8s ease-in-out;
 }
+
+.sidebar-content{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    width: 125px;
+    margin: 20px auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.sidebar-btn{
+    text-align: center;
+}
+
+.sidebar-btn:hover{
+    color: #fff !important;
+
+}
+
 
 .show-sidebar{
     left: 0;
