@@ -13,10 +13,10 @@
 
 
 
-    <title>Create Account</title>
+    <title>Create New Intake</title>
 </head>
 <body>
-    <!-- Top Navigation Bar -->
+    <!-- Top Navigation bar -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="container-fluid">
@@ -25,9 +25,9 @@
                     <a class="navbar-brand" href="#"><img src="Full_Final_Neptune_logo.png" class="logo" alt=""></a>
                     <ul class="navbar-nav">
                         <li class="nav-item nav-link">
-                            Account Management
+                            Intake Management
                         </li>
-                    </ul>
+                    </ul>                  
                 </div>
                 <button class="btn flex-button btn-primary ms-auto me-lg-5">
                     <i class="uil uil-user"></i>
@@ -35,7 +35,6 @@
             </div>
           </nav>
     </header>
-
     <!-- Side Navigation Bar -->
     <div class="sidebar-menu show-sidebar">
         <ul class="sidebar-content">
@@ -52,67 +51,43 @@
                 <a href="intakeManagement.html" class="nav-link sidebar-btn">Intake Management</a>
             </li>
             <li class="nav-item">
-                <a href="classManagement.html" class="nav-link sidebar-btn">Class Management</a>
+                <a href="" class="nav-link sidebar-btn">Class Management</a>
             </li>
             <li class="nav-item">
                 <a href="accountManagement.html" class="nav-link sidebar-btn">Account Management</a>
             </li>
         </ul>
     </div>
-
+    
     <!-- Main Content -->
     <main>
-        <h1 class="text-center me-auto ms-auto">Create New Account</h1> 
+        <h1 class="text-center me-auto ms-auto">Create New Intake</h1>
         <form action="" class="form" method="POST">
-            <div class="mb-4 row">
+            <div class="mb-4">
+                <label for="Name" class="form-label">Intake</label>
+                <input type="text" class="form-control" id="Name" placeholder="Intake" name="">
+            </div>
+            <div class="mb-4 row" >
                 <div class="col-6">
-                    <label for="Name" class="form-label">Name</label>
-                    <input type="email" class="form-control" id="Name" placeholder="Name" name="">
+                    <label for="Course" class="form-label">Course</label>
+                    <input type="text" class="form-control" id="Course" placeholder="Course" name="">
                 </div>
                 <div class="col-6">
-                    <label for="passwordField" class="form-label">Password</label>
-                    <input type="email" class="form-control" id="passwordField" placeholder="Password" name="">
+                    <label for="commencementDate" class="form-label">Commencement Date</label>
+                    <input type="date" class="form-control" id="commencementDate" name="commencementDate">
                 </div>
             </div>
             <div class="mb-4 row">
                 <div class="col-6">
-                    <label for="AccountID" class="form-label">NRIC</label>
-                    <input type="email" class="form-control" id="AccountID" placeholder="NRIC Number" name="">
-                </div>
-                <div class="col-6">
-                    <label for="" class="form-label">User Roles</label>
-                    <select class="form-select" name="roles" id="roles">
-                        <option selected disabled>Select an User Roles</option>
-                        <option value="Student">Student</option>
-                        <option value="Lecturer">Lecturer</option>
-                    </select>
+                    <label for="completionDate" class="form-label">Completion Date</label>
+                    <input type="date" class="form-control" id="completionDate" name="completionDate">
                 </div>
             </div>
-            <div class="mb-4 row hidden" id="hidden-form">
-                <div class="col-6">
-                    <label for="AccountID" class="form-label">Faculty</label>
-                    <select class="form-select" name="faculty" aria-label="Default select example">
-                        <option selected disabled>Select a Faculty</option>
-                        <option value="SOBM">School of Business and Management</option>
-                        <option value="SOCT">School of Computing and Technology</option>
-                        <option value="SOE">School of Engineering</option>
-                        <option value="SOFS">School of Foundation Studies</option>
-                        <option value="SOGS">School of General Studies</option>
-                        <option value="SOMAD">School of Media, Arts and Design</option>
-                        <option value="SOMAQS">School of Mathematics, Acturial and Quantitative</option>
-                    </select>
-                </div>
-                <div class="col-6">
-                    <label for="" class="form-label">Designation</label>
-                    <select class="form-select" name="designation" aria-label="Default select example">
-                        <option selected disabled>Select a Designation</option>
-                        <option value="Part Time Lecturer">Part Time Lecturer</option>
-                        <option value="Full Time Lecturer">Full Time Lecturer</option>
-                    </select>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Create Account</button>
+            <button type="submit" class="btn btn-primary">Create Intake</button>
         </form>
+            
+
+            
     </main>
 
     <footer>
@@ -122,6 +97,7 @@
         
     </footer>
 
+    <!-- JS Dependency -->
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
