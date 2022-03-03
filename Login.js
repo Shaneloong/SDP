@@ -12,7 +12,7 @@ function Check_Password() {
     if (ps == reps){
         return true;
     }else {
-        alert("The password is not compatible");
+        alert("The password is not compatible!");
         return false;
     }
 }
