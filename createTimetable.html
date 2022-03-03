@@ -13,7 +13,7 @@
 
 
 
-    <title>Create New Intake</title>
+    <title>Create Timetable</title>
 </head>
 <body>
     <!-- Top Navigation bar -->
@@ -25,7 +25,7 @@
                     <a class="navbar-brand" href="#"><img src="Full_Final_Neptune_logo.png" class="logo" alt=""></a>
                     <ul class="navbar-nav">
                         <li class="nav-item nav-link">
-                            Intake Management
+                            Timetable Management
                         </li>
                     </ul>                  
                 </div>
@@ -61,31 +61,40 @@
     
     <!-- Main Content -->
     <main>
-        <h1 class="text-center me-auto ms-auto">Create New Intake</h1>
+        <h1 class="text-center me-auto ms-auto">Create Timetable</h1>
         <form action="" class="form" method="POST">
             <div class="mb-4">
-                <label for="Name" class="form-label">Intake</label>
-                <input type="text" class="form-control" id="Name" placeholder="Intake" name="">
+                <label for="Name" class="form-label">Class ID</label>
+                <input type="text" class="form-control" id="Name" placeholder="Class ID" name="">
             </div>
             <div class="mb-4 row" >
                 <div class="col-6">
-                    <label for="Course" class="form-label">Course</label>
-                    <input type="text" class="form-control" id="Course" placeholder="Course" name="">
+                    <label for="classroom" class="form-label">Classroom</label>
+                    <input type="text" class="form-control" id="classroom" placeholder="Classroom" name="">
                 </div>
                 <div class="col-6">
-                    <label for="commencementDate" class="form-label">Commencement Date</label>
-                    <input type="date" class="form-control" id="commencementDate" name="commencementDate">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date" name="date">
                 </div>
             </div>
             <div class="mb-4 row">
                 <div class="col-6">
-                    <label for="completionDate" class="form-label">Completion Date</label>
-                    <input type="date" class="form-control" id="completionDate" name="completionDate">
+                    <label for="starttime" class="form-label">Time</label>
+                    <input type="time" class="form-control" id="starttime" name="starttime">
+                </div>
+                <div class="col-6">
+                    <label for="starttime" class="form-label">Duration</label>
+                    <select name="duration" id="" class="form-select">
+                        <option selected disabled>Select Duration</option>
+                        <option value="1">1 Hour</option>
+                        <option value="1.25">1 Hour 15 Minutes</option>
+                        <option value="1.5">1 Hour 30 Minutes</option>
+                        <option value="2">2 Hours</option>
+                    </select>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Create Intake</button>
+            <button type="submit" class="btn btn-primary">Create Timetable</button>
         </form>
-            
 
             
     </main>

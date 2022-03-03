@@ -13,7 +13,7 @@
 
 
 
-    <title>Create New Intake</title>
+    <title>Intake Timetable</title>
 </head>
 <body>
     <!-- Top Navigation bar -->
@@ -25,7 +25,7 @@
                     <a class="navbar-brand" href="#"><img src="Full_Final_Neptune_logo.png" class="logo" alt=""></a>
                     <ul class="navbar-nav">
                         <li class="nav-item nav-link">
-                            Intake Management
+                            Timetable Management
                         </li>
                     </ul>                  
                 </div>
@@ -61,30 +61,48 @@
     
     <!-- Main Content -->
     <main>
-        <h1 class="text-center me-auto ms-auto">Create New Intake</h1>
-        <form action="" class="form" method="POST">
-            <div class="mb-4">
-                <label for="Name" class="form-label">Intake</label>
-                <input type="text" class="form-control" id="Name" placeholder="Intake" name="">
-            </div>
-            <div class="mb-4 row" >
-                <div class="col-6">
-                    <label for="Course" class="form-label">Course</label>
-                    <input type="text" class="form-control" id="Course" placeholder="Course" name="">
-                </div>
-                <div class="col-6">
-                    <label for="commencementDate" class="form-label">Commencement Date</label>
-                    <input type="date" class="form-control" id="commencementDate" name="commencementDate">
-                </div>
-            </div>
-            <div class="mb-4 row">
-                <div class="col-6">
-                    <label for="completionDate" class="form-label">Completion Date</label>
-                    <input type="date" class="form-control" id="completionDate" name="completionDate">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Create Intake</button>
-        </form>
+        <h1 class="text-center me-auto ms-auto">Intake ID</h1>
+        <table class="table table-hover my-5 align-middle">
+            <thead>
+                <th colspan="3">Day</th>
+            </thead>
+            <tr>
+                <td>
+                    <div class="d-flex flex-column">
+                        <div>Course Name</div>
+                        <div>Lecturer Name</div>
+                    </div>
+                </td>
+                <td>
+                    Location
+                </td>
+                <td>Time</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="d-flex flex-column">
+                        <div>Course Name</div>
+                        <div>Lecturer Name</div>
+                    </div>
+                </td>
+                <td>
+                    Location
+                </td>
+                <td>Time</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="d-flex flex-column">
+                        <div>Course Name</div>
+                        <div>Lecturer Name</div>
+                    </div>
+                </td>
+                <td>
+                    Location
+                </td>
+                <td>Time</td>
+            </tr>
+        </table>
             
 
             
