@@ -4,16 +4,16 @@ document.getElementById("sidebar-toggler").addEventListener("click", ()=>{
     document.querySelector('footer').classList.toggle('default-footer');
 });
 
-window.onscroll = () => {
-    if (window.pageYOffset > 50) {
-        document.querySelector('.sidebar-menu').style.top = 0;
-        document.querySelector('.sidebar-menu').style.height = "100%";
-    }
-    else{
-        document.querySelector('.sidebar-menu').style.top = "75px";
-        document.querySelector('.sidebar-menu').style.height = "calc(100% - 75px)";
-    }
-};
+// window.onscroll = () => {
+//     if (window.pageYOffset > 50) {
+//         document.querySelector('.sidebar-menu').style.top = 0;
+//         document.querySelector('.sidebar-menu').style.height = "100%";
+//     }
+//     else{
+//         document.querySelector('.sidebar-menu').style.top = "75px";
+//         document.querySelector('.sidebar-menu').style.height = "calc(100% - 75px)";
+//     }
+// };
 try {
     document.getElementById('roles').addEventListener('change', ()=>{
         if(document.getElementById('roles').value == 'Lecturer'){
