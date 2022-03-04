@@ -19,10 +19,16 @@ function Check_Password() {
 function CurrentWithNew(){
     let cur = document.getElementById("Current").value;
     let New = document.getElementById("Password").value;
-    if (cur == New){
+    let Re = document.getElementById("Password2").value;
+    if (cur != New){
+        if (New == Re){
+            return true;
+        }else {
+            alert("The New Password and Retype Password is not Compatible!!")
+            return false;
+        }
+    }else if (cur == New) {
         alert("Current Password Cannot Same With New Password!!")
-        document.getElementById("login-button").className = "btn btn-primary disabled";
-    }else {
-        document.getElementById("login-button").className = "btn btn-primary";
+        return false;
     }
 }
