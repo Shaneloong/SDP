@@ -54,3 +54,22 @@ try {
 } catch (error) {
     console.log(error);
 }
+
+
+try {
+    let todayDate = new Date("February 28, 2022");
+    if(todayDate.getDay() == 1){
+        for(let i = 1; i<=4; i++){
+            let newDate = todayDate.setDate(todayDate.getDate() + 1);
+            let newDateString = new Date(newDate).toDateString();
+            document.getElementById('timetable').innerHTML += `<thead>
+                                                                    <th colspan="5" id="">${newDateString}</th>
+                                                                </thead>`;
+        }
+    }
+} catch (error) {
+    console.log(error);
+}
+
+
+

@@ -42,7 +42,7 @@
                 <a href="" class="nav-link sidebar-btn">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link sidebar-btn">Timetable Management</a>
+                <a href="timetableManagement.html" class="nav-link sidebar-btn">Timetable Management</a>
             </li>
             <li class="nav-item">
                 <a href="" class="nav-link sidebar-btn">Attendance Report</a>
@@ -81,11 +81,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                ...
+                <form action="" method="post">
+                    <div class="mb-4">
+                        <label for="lecturer" class="form-label">Lecturer</label>
+                        <input type="text" class="form-control" id="lecturer" placeholder="Lecturer" name="">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Assign Lecturer</button>
+                </form>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
                 </div>
             </div>
             </div>
@@ -119,11 +124,16 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    ...
+                    <form action="" method="post">
+                        <div class="mb-4">
+                            <label for="intake" class="form-label">Intake</label>
+                            <input type="text" class="form-control" id="intake" placeholder="Intake" name="">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Intake</button>
+                    </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
                     </div>
                 </div>
             </div>

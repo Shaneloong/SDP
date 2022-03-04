@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
+
 *{
     font-family: 'Poppins', sans-serif;
 }
@@ -64,7 +65,7 @@ nav{
     background: #D1D1D1;
     width: 200px;
     height: calc(100% - 75px);
-    transition: 0.7s ease-in-out;
+    transition: 0.05s ease-in-out;
 }
 
 .sidebar-content{
@@ -163,14 +164,14 @@ main{
 
 /* Footer */
 footer{
-    position: sticky;
-    bottom: 0;
+    /* position: sticky;
+    bottom: 0; */
     margin-left: 200px;
     width: calc(100% - 200px);
     height: 50px;
     text-align: center;
     transition: 0.5s ease-in-out;
-    background-color: #AAAAAA;
+    background-color: #E8E1D9;
 }
 
 .default-footer{
