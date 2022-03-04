@@ -18,6 +18,12 @@ img{
 .Login{
     text-align: center;
 }
+
+body{
+    background-image: url("loginBackground.jpg");
+    background-size: cover;
+}
+
 form {
     padding: 15px;
 }
