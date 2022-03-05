@@ -176,16 +176,18 @@ main{
 }
 .module-name{
     border-style: groove;
+    border-width: thin;
 }
 .mod{
     padding: 1rem;
 }
-.module-image{
-    background-color: lightyellow;
-}
 .module-container{
     display: flex;
     flex-direction: column;
+}
+#StudentDash a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
