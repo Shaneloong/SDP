@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="Final_Neptune_logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/Logo/Final_Neptune_logo.png" type="image/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 
 
@@ -22,7 +22,7 @@
             <div class="container-fluid">
                 <button class="btn mx-3 flex-button btn-outline-secondary" id="sidebar-toggler"><box-icon name='menu'></box-icon></button>
                 <div class="me-auto flex-group">
-                    <a class="navbar-brand" href="#"><img src="Full_Final_Neptune_logo.png" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="#"><img src="/Logo/Full_Final_Neptune_logo.png" class="logo" alt=""></a>
                     <ul class="navbar-nav">
                         <li class="nav-item nav-link">
                             Class Management
@@ -64,8 +64,8 @@
     <main>
         <h1 class="text-center me-auto ms-auto">Create New Account</h1> 
         <form action="" class="form" method="POST">
-            <div class="mb-4 row">
-                <div class="col-6">
+            <div class="mb-4 row row-cols-2">
+                <div class="col mb-4">
                     <label for="roles" class="form-label">User Roles</label>
                     <select class="form-select" name="roles" id="roles">
                         <option selected disabled>Select an User Roles</option>
@@ -73,28 +73,41 @@
                         <option value="Lecturer">Lecturer</option>
                     </select>
                 </div>
-                <div class="col-6 student-form hidden">
-                    <label for="studentAccount" class="form-label">Upload Student Account</label>
-                    <input class="form-control" type="file" id="studentAccount" name="" accept=".csv">
+                <div class="col mb-4">
+                    <label for="creationType" class="form-label">Creation Type</label>
+                    <select class="form-select" name="creationType" id="creationType">
+                        <option selected disabled>Select a creation type</option>
+                        <option value="Single">Single</option>
+                        <option value="Bulk">Bulk</option>
+                    </select>
                 </div>
-                <div class="col-6 hidden hidden-form">
+                <div class="col mb-4 bulk-student-form hidden">
+                    <label for="studentFile" class="form-label">Upload Student Account</label>
+                    <input class="form-control" type="file" id="studentFile" name="" accept=".csv">
+                </div>
+                <div class="col mb-4 hidden bulk-hidden-form">
+                    <label for="lecturerFile" class="form-label">Upload Lecturer Account</label>
+                    <input class="form-control" type="file" id="lecturerFile" name="" accept=".csv">
+                </div>
+                <div class="col mb-4 hidden shared-form">
+                    <label for="AccountID" class="form-label">Account ID</label>
+                    <input type="text" class="form-control" id="AccountID" placeholder="Account ID" name="">
+                </div>
+                <div class="col mb-4 hidden shared-form">
                     <label for="Name" class="form-label">Name</label>
-                    <input type="email" class="form-control" id="NameField" placeholder="Name" name="">
+                    <input type="text" class="form-control" id="NameField" placeholder="Name" name="">
                 </div>
-            </div>
-            <div class="mb-4 row hidden hidden-form">
-                <div class="col-6">
-                    <label for="AccountID" class="form-label">NRIC</label>
-                    <input type="email" class="form-control" id="AccountID" placeholder="NRIC Number" name="">
+            
+                <div class="col mb-4 hidden shared-form">
+                    <label for="NRIC" class="form-label">NRIC</label>
+                    <input type="number" class="form-control" id="NRIC" placeholder="NRIC Number" name="">
                 </div>
-                <div class="col-6">
+                <div class="col mb-4 hidden shared-form">
                     <label for="passwordField" class="form-label">Password</label>
-                    <input type="email" class="form-control" id="passwordField" placeholder="Password" name="">
+                    <input type="password" class="form-control" id="passwordField" placeholder="Password" name="">
                 </div>
                 
-            </div>
-            <div class="mb-4 row hidden hidden-form">
-                <div class="col-6">
+                <div class="col mb-4 hidden hidden-form">
                     <label for="AccountID" class="form-label">Faculty</label>
                     <select class="form-select" name="faculty" aria-label="Default select example">
                         <option selected disabled>Select a Faculty</option>
@@ -107,7 +120,7 @@
                         <option value="SOMAQS">School of Mathematics, Acturial and Quantitative</option>
                     </select>
                 </div>
-                <div class="col-6">
+                <div class="col hidden hidden-form">
                     <label for="" class="form-label">Designation</label>
                     <select class="form-select" name="designation" aria-label="Default select example">
                         <option selected disabled>Select a Designation</option>
@@ -126,7 +139,7 @@
         </p>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
 </body>

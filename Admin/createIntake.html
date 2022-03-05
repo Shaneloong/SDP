@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="Final_Neptune_logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/Logo/Final_Neptune_logo.png" type="image/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 
 
-    <title>Intake Timetable</title>
+    <title>Create New Intake</title>
 </head>
 <body>
     <!-- Top Navigation bar -->
@@ -22,7 +22,7 @@
             <div class="container-fluid">
                 <button class="btn mx-3 flex-button btn-outline-secondary" id="sidebar-toggler"><box-icon name='menu'></box-icon></button>
                 <div class="me-auto flex-group">
-                    <a class="navbar-brand" href="#"><img src="Full_Final_Neptune_logo.png" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="#"><img src="/Logo/Full_Final_Neptune_logo.png" class="logo" alt=""></a>
                     <ul class="navbar-nav">
                         <li class="nav-item nav-link">
                             Class Management
@@ -61,48 +61,30 @@
     
     <!-- Main Content -->
     <main>
-        <h1 class="text-center me-auto ms-auto">Intake ID</h1>
-        <table class="table table-hover my-5 align-middle">
-            <thead>
-                <th colspan="3">Day</th>
-            </thead>
-            <tr>
-                <td>
-                    <div class="d-flex flex-column">
-                        <div>Course Name</div>
-                        <div>Lecturer Name</div>
-                    </div>
-                </td>
-                <td>
-                    Location
-                </td>
-                <td>Time</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="d-flex flex-column">
-                        <div>Course Name</div>
-                        <div>Lecturer Name</div>
-                    </div>
-                </td>
-                <td>
-                    Location
-                </td>
-                <td>Time</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="d-flex flex-column">
-                        <div>Course Name</div>
-                        <div>Lecturer Name</div>
-                    </div>
-                </td>
-                <td>
-                    Location
-                </td>
-                <td>Time</td>
-            </tr>
-        </table>
+        <h1 class="text-center me-auto ms-auto">Create New Intake</h1>
+        <form action="" class="form" method="POST">
+            <div class="mb-4">
+                <label for="Name" class="form-label">Intake</label>
+                <input type="text" class="form-control" id="Name" placeholder="Intake" name="">
+            </div>
+            <div class="mb-4 row" >
+                <div class="col-6">
+                    <label for="Course" class="form-label">Course</label>
+                    <input type="text" class="form-control" id="Course" placeholder="Course" name="">
+                </div>
+                <div class="col-6">
+                    <label for="commencementDate" class="form-label">Commencement Date</label>
+                    <input type="date" class="form-control" id="commencementDate" name="commencementDate">
+                </div>
+            </div>
+            <div class="mb-4 row">
+                <div class="col-6">
+                    <label for="completionDate" class="form-label">Completion Date</label>
+                    <input type="date" class="form-control" id="completionDate" name="completionDate">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Intake</button>
+        </form>
             
 
             
@@ -116,7 +98,16 @@
     </footer>
 
     <!-- JS Dependency -->
-    <script src="index.js"></script>
+    <script>
+        document.getElementById('commencementDate').addEventListener('change', ()=>{
+            let inputDate = document.getElementById('commencementDate').value;
+            let date = new Date(inputDate);
+            date.getDate(date.setDate(date.getDate() + 14 *7));
+            
+            document.getElementById('completionDate').valueAsDate = date;
+        });
+    </script>
+    <script src="/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
 </body>
