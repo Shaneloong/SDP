@@ -167,9 +167,26 @@ main{
 }
 
 
-
-
-
+/* Student */
+#StudentDash{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 6rem;
+}
+.module-name{
+    border-style: groove;
+}
+.mod{
+    padding: 1rem;
+}
+.module-image{
+    background-color: lightyellow;
+}
+.module-container{
+    display: flex;
+    flex-direction: column;
+}
 
 
 
