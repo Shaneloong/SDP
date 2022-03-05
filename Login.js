@@ -1,8 +1,10 @@
 function Check_Nric(){
     let x = document.getElementById("NRIC").value;
     if (x.length == 12 || x.length == 11){
+        document.getElementById("NRIC").className = "form-control is-valid"
         document.getElementById("login-button").className = "btn btn-primary";
     }else{
+        document.getElementById("NRIC").className = "form-control is-invalid"
         document.getElementById("login-button").className = "btn btn-primary disabled";
     }
 }
