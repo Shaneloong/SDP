@@ -16,60 +16,119 @@ document.getElementById("sidebar-toggler").addEventListener("click", ()=>{
 // };
 try {
     document.getElementById('roles').addEventListener('change', ()=>{
-        if(document.getElementById('roles').value == 'Lecturer'){
-            document.getElementById('hidden-form').classList.remove('hidden');
+        let hiddenForm = document.getElementsByClassName('hidden-form');
+        if(document.getElementById('roles').value === 'Lecturer'){
+            let hiddenForm = document.getElementsByClassName('hidden-form');
+                Array.from(hiddenForm).forEach(element =>{
+                    element.classList.remove('hidden');
+                });
+            document.querySelector('.student-form').classList.add('hidden');
+        }
+        else if (document.getElementById('roles').value === 'Student'){
+            document.querySelector('.student-form').classList.remove('hidden');
+            Array.from(hiddenForm).forEach(field =>{
+                field.classList.add('hidden');
+            });
+        }
+    });
+} catch (error) {
+    console.log(error);
+}
+
+try {
+    const todayDate = new Date("March 6, 2022");
+    const day = todayDate.getDay();
+    const different = todayDate.getDate() - day + (day === 0 ? -6 : 1);
+    let dayName;
+
+    const firstDayOfWeek = new Date(todayDate.setDate(different));
+
+    for(let i=0; i <= 4; i++){
+        if(i===0){
+            firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 0);
         }else{
-            document.getElementById('hidden-form').classList.add('hidden');
+            firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 1);
         }
-    });
-} catch (error) {
-    console.log(error);
-}
-
-try {
-    document.getElementById('numberOfStudent').addEventListener('keyup', ()=>{
-
-        let numberOfStudent = document.getElementById('numberOfStudent').value;
-        if(numberOfStudent >= 0){
-            document.getElementById('student-form').innerHTML = '';
-            for (let i = 1; i <= numberOfStudent; i++) {
-                let student = 'students' + i;
-                document.getElementById('student-form').innerHTML += `<div class="col input-group w-25 my-2">
-                                                                        <span class="input-group-text">Student's TP</span>
-                                                                        <input type="text" class="form-control student-tp" name="${student}" placeholder="Student's TP" maxlength="8">
-                                                                    </div>`;
-            }
+        switch (firstDayOfWeek.getDay()) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+            break;
+            default:
+                break;
         }
-
-        let inputField = document.getElementsByClassName('student-tp');
-        Array.from(inputField).forEach(element => {
-            element.addEventListener('blur', ()=>{
-                console.log(element.value);
-            })
-        });
-
-    });
-
-
-} catch (error) {
-    console.log(error);
-}
-
-
-try {
-    let todayDate = new Date("February 28, 2022");
-    if(todayDate.getDay() == 1){
-        for(let i = 1; i<=4; i++){
-            let newDate = todayDate.setDate(todayDate.getDate() + 1);
-            let newDateString = new Date(newDate).toDateString();
-            document.getElementById('timetable').innerHTML += `<thead>
-                                                                    <th colspan="5" id="">${newDateString}</th>
-                                                                </thead>`;
-        }
+        // console.log(firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 1));
+        document.getElementById('timetable').innerHTML += `<thead>
+                                                                <th colspan="5" >${firstDayOfWeek.toDateString()}</th>
+                                                            </thead>
+                                                            <tr class="table-borderless">
+                                                                <td colspan="5">
+                                                                    <table id="${dayName}" class="table table-responsive table-hover mb-0 align-middle">
+                                                                        <tr>
+                                                                        <td>
+                                                                            <div class="flex-group flex-column">
+                                                                                <div>Class ID</div>
+                                                                                <div>Module Name</div>
+                                                                                <div>Intake</div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>Location</td>
+                                                                        <td>
+                                                                            <div class="flex-group flex-column">
+                                                                                <div>Start Time - End Time</div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            Lecturer Name
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="" class="btn btn-outline-secondary"><i class="uil uil-edit"></i></a>
+                                                                            <a href="" class="btn btn-outline-secondary"><i class="uil uil-trash-alt"></i></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="flex-group flex-column">
+                                                                                <div>Class ID</div>
+                                                                                <div>Module Name</div>
+                                                                                <div>Intake</div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>Location</td>
+                                                                        <td>
+                                                                            <div class="flex-group flex-column">
+                                                                                <div>Start Time - End Time</div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            Lecturer Name
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="" class="btn btn-outline-secondary"><i class="uil uil-edit"></i></a>
+                                                                            <a href="" class="btn btn-outline-secondary"><i class="uil uil-trash-alt"></i></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr`;
     }
+
 } catch (error) {
     console.log(error);
 }
+
+
 
 
 

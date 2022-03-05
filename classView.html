@@ -39,7 +39,7 @@
     <div class="sidebar-menu show-sidebar">
         <ul class="sidebar-content">
             <li class="nav-item">
-                <a href="" class="nav-link sidebar-btn">Dashboard</a>
+                <a href="adminDashboard.html" class="nav-link sidebar-btn">Dashboard</a>
             </li>
             <li class="nav-item">
                 <a href="accountManagement.html" class="nav-link sidebar-btn">Account Management</a>
@@ -63,34 +63,53 @@
     <main>
         <div class="flex-group justify-content-between">
             <div>
-                <h2>Class ID</h2>
+                <h2 class="fw-bold fs-1">Class ID</h2>
+                <div class="container w-50 ms-0">
+                    <div class="row row-cols-2">
+                        <div class="col">
+                            Module Name:
+                        </div>
+                        <div class="col">
+                            Programming with Python
+                        </div>
+                        <div class="col">
+                            Commencement Date:
+                        </div>
+                        <div class="col">
+                            14/02/2020
+                        </div>                   
+                        <div class="col">
+                            Completion Date:
+                        </div>
+                        <div class="col">
+                            15/03/2020
+                        </div>
+                    </div>
+                </div>
                 <h5 class="my-3">Lecturer Information</h5>
             </div>
             <div>
                 <!-- Modal Toggler -->
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Assign Lecturer</button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assignLecturerModal">Assign Lecturer</button>
             </div>
         </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- Assign Lecturer Modal -->
+        <div class="modal fade" id="assignLecturerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Assign Lecturer</h5>
+                <h5 class="modal-title">Assign Lecturer</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                <form action="" method="post">
-                    <div class="mb-4">
-                        <label for="lecturer" class="form-label">Lecturer</label>
-                        <input type="text" class="form-control" id="lecturer" placeholder="Lecturer" name="">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Assign Lecturer</button>
-                </form>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <div class="modal-body my-2 mx-3">
+                    <form action="" method="post">
+                        <div class="mb-4">
+                            <label for="lecturer" class="form-label">Lecturer</label>
+                            <input type="text" class="form-control" id="lecturer" placeholder="Lecturer" name="">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Assign Lecturer</button>
+                    </form>
                 </div>
             </div>
             </div>
@@ -99,7 +118,7 @@
         <div class="fluid-container rounded w-50 bg-secondary">
             <div class="flex-group">
                 <p class="p-3 m-0 text-white">
-                    Lecturer ID: Lecture Name
+                    Lecturer ID Lecture Name
                 </p>
                 <a href="" class="btn btn-outline-light ms-auto me-4"><i class="uil uil-trash-alt"></i></a>
             </div>
@@ -111,19 +130,19 @@
             </div>
             <div>
                 <!-- Modal Toggler -->
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Enrol Intake</button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enrolIntakeModal">Enrol Intake</button>
             </div>
         </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <!-- Enrol Intake Modal -->
+        <div class="modal fade" id="enrolIntakeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Enrol Intake</h5>
+                        <h5 class="modal-title">Enrol Intake</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body my-2 mx-3">
                     <form action="" method="post">
                         <div class="mb-4">
                             <label for="intake" class="form-label">Intake</label>
@@ -132,20 +151,19 @@
                         <button type="submit" class="btn btn-primary">Add Intake</button>
                     </form>
                     </div>
-                    <!-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div> -->
                 </div>
             </div>
         </div>
         
         <table class="table table-hover w-50 align-middle">
             <thead>
-                <td>Intake ID</td>
-                <td class="w-25"></td>
+                <th>Intake ID</th>
+                <th>Course Name</th>
+                <th class="w-25"></th>
             </thead>
             <tr>
                 <td>UCDF2005ICT(SE)</td>
+                <td>Diploma in ICT(SE)</td>
                 <td class="w-25"><a href="" class="btn btn-outline-secondary"><i class="uil uil-trash-alt"></i></a></td>
             </tr>
         </table>

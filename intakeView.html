@@ -37,7 +37,7 @@
     <div class="sidebar-menu show-sidebar">
         <ul class="sidebar-content">
             <li class="nav-item">
-                <a href="" class="nav-link sidebar-btn">Dashboard</a>
+                <a href="adminDashboard.html" class="nav-link sidebar-btn">Dashboard</a>
             </li>
             <li class="nav-item">
                 <a href="accountManagement.html" class="nav-link sidebar-btn">Account Management</a>
@@ -79,7 +79,8 @@
                 <h3>Student Information</h3>
             </div>
             <div class="ms-auto">
-                <a href="studentEnrolment.html" class="btn btn-primary">Enroll Student</a>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#oneStudentModal">Enroll a Student</button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#multipleStudentModal">Enroll Multiple Students</button>
             </div>
         </div>
 
@@ -106,6 +107,55 @@
             </tr>
         </table>
 
+        <!-- Enrol One Student Modal -->
+        <div class="modal fade" id="oneStudentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Enrol Student</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body m-3">
+                        <form action="" method="POST">
+                            <div class="mb-4">
+                                <label for="formFile" class="form-label">Student ID</label>
+                                <input class="form-control" type="text" id="studentIDField" placeholder="Student TP">
+                                <div class="valid-feedback">
+                                    Valid Format for Student ID
+                                </div>
+                                <div class="invalid-feedback">
+                                    Invalid Format for Student ID
+                                </div>
+                            </div>
+                            <button type="submit" id="enrolStudent" class="btn btn-primary">Submit</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enrol Multiple Students Modal -->
+        <div class="modal fade" id="multipleStudentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Enrol Multiple Students</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body m-3">
+                        <form action="" method="POST">
+                            <div class="mb-4">
+                                <label for="formFile" class="form-label">Upload Student File</label>
+                                <input class="form-control" type="file" id="formFile" accept=".csv">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
             
     </main>
 
@@ -117,6 +167,23 @@
     </footer>
 
     <!-- JS Dependency -->
+    <script>
+        const TPpattern = /TP\d{6}/g;
+        document.getElementById('studentIDField').addEventListener('keyup', ()=>{
+            let text = document.getElementById('studentIDField').value;
+            if(TPpattern.test(text) && text.length === 8){
+                console.log("Correct");
+                document.getElementById('enrolStudent').removeAttribute('disabled');
+                document.getElementById('studentIDField').classList.add('is-valid');
+                document.getElementById('studentIDField').classList.remove('is-invalid');
+            }else{
+                console.log("False");
+                document.getElementById('enrolStudent').setAttribute('disabled', 'true');
+                document.getElementById('studentIDField').classList.add('is-invalid');
+                document.getElementById('studentIDField').classList.remove('is-valid');
+            }
+        });
+    </script>
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>

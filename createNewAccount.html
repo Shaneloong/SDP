@@ -40,7 +40,7 @@
     <div class="sidebar-menu show-sidebar">
         <ul class="sidebar-content">
             <li class="nav-item">
-                <a href="" class="nav-link sidebar-btn">Dashboard</a>
+                <a href="adminDashboard.html" class="nav-link sidebar-btn">Dashboard</a>
             </li>
             <li class="nav-item">
                 <a href="accountManagement.html" class="nav-link sidebar-btn">Account Management</a>
@@ -66,29 +66,34 @@
         <form action="" class="form" method="POST">
             <div class="mb-4 row">
                 <div class="col-6">
-                    <label for="Name" class="form-label">Name</label>
-                    <input type="email" class="form-control" id="Name" placeholder="Name" name="">
-                </div>
-                <div class="col-6">
-                    <label for="passwordField" class="form-label">Password</label>
-                    <input type="email" class="form-control" id="passwordField" placeholder="Password" name="">
-                </div>
-            </div>
-            <div class="mb-4 row">
-                <div class="col-6">
-                    <label for="AccountID" class="form-label">NRIC</label>
-                    <input type="email" class="form-control" id="AccountID" placeholder="NRIC Number" name="">
-                </div>
-                <div class="col-6">
-                    <label for="" class="form-label">User Roles</label>
+                    <label for="roles" class="form-label">User Roles</label>
                     <select class="form-select" name="roles" id="roles">
                         <option selected disabled>Select an User Roles</option>
                         <option value="Student">Student</option>
                         <option value="Lecturer">Lecturer</option>
                     </select>
                 </div>
+                <div class="col-6 student-form hidden">
+                    <label for="studentAccount" class="form-label">Upload Student Account</label>
+                    <input class="form-control" type="file" id="studentAccount" name="" accept=".csv">
+                </div>
+                <div class="col-6 hidden hidden-form">
+                    <label for="Name" class="form-label">Name</label>
+                    <input type="email" class="form-control" id="NameField" placeholder="Name" name="">
+                </div>
             </div>
-            <div class="mb-4 row hidden" id="hidden-form">
+            <div class="mb-4 row hidden hidden-form">
+                <div class="col-6">
+                    <label for="AccountID" class="form-label">NRIC</label>
+                    <input type="email" class="form-control" id="AccountID" placeholder="NRIC Number" name="">
+                </div>
+                <div class="col-6">
+                    <label for="passwordField" class="form-label">Password</label>
+                    <input type="email" class="form-control" id="passwordField" placeholder="Password" name="">
+                </div>
+                
+            </div>
+            <div class="mb-4 row hidden hidden-form">
                 <div class="col-6">
                     <label for="AccountID" class="form-label">Faculty</label>
                     <select class="form-select" name="faculty" aria-label="Default select example">
@@ -119,7 +124,6 @@
         <p class="pt-3">
             Neptune &copy;, <script>var date = new Date(); document.write(date.getFullYear());</script>
         </p>
-        
     </footer>
 
     <script src="index.js"></script>
