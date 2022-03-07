@@ -155,7 +155,39 @@ try {
 } catch (error) {
     console.log(error);
 }
-
+function timetable(t){
+    if (t == 1){
+        document.querySelector(".table1").style.display = "flex"
+        document.querySelector(".table2").style.display = "none"
+        document.querySelector(".table3").style.display = "none"
+        document.querySelector(".table4").style.display = "none"
+        document.querySelector(".table5").style.display = "none"
+    }else if (t == 2){
+        document.querySelector(".table1").style.display = "none"
+        document.querySelector(".table2").style.display = "flex"
+        document.querySelector(".table3").style.display = "none"
+        document.querySelector(".table4").style.display = "none"
+        document.querySelector(".table5").style.display = "none"
+    }else if(t == 3){
+        document.querySelector(".table1").style.display = "none"
+        document.querySelector(".table2").style.display = "none"
+        document.querySelector(".table3").style.display = "flex"
+        document.querySelector(".table4").style.display = "none"
+        document.querySelector(".table5").style.display = "none"
+    }else if (t == 4){
+        document.querySelector(".table1").style.display = "none"
+        document.querySelector(".table2").style.display = "none"
+        document.querySelector(".table3").style.display = "none"
+        document.querySelector(".table4").style.display = "flex"
+        document.querySelector(".table5").style.display = "none"
+    }else if (t == 5){
+        document.querySelector(".table1").style.display = "none"
+        document.querySelector(".table2").style.display = "none"
+        document.querySelector(".table3").style.display = "none"
+        document.querySelector(".table4").style.display = "none"
+        document.querySelector(".table5").style.display = "flex"
+    }
+}
 
 
 
