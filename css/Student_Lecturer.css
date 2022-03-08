@@ -90,3 +90,31 @@ input[type=number]{
     font-size: 70px;
     text-align: center;
 }
+/*Attendance Record */
+#title{
+    background-color: #ADADAD;
+    border-radius: 5px;
+    width: 1000px;
+}
+#attend-content{
+    background-color: #E8F6EF;
+    gap: 2rem;
+    width: 1000px;
+}
+#overall-attend{
+    background-color:whitesmoke;
+    height: 250px;
+    width: 300px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-color: seagreen;
+    border-style: solid;
+}
+#attend-record{
+    display: flex;
+    gap: 5rem;
+}
