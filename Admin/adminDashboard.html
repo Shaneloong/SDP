@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
     <link rel="stylesheet" href="/css/style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -52,7 +53,7 @@
                 <a href="timetableManagement.html" class="nav-link sidebar-btn">Timetable Management</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link sidebar-btn">Attendance Report</a>
+                <a href="attendanceReport.html" class="nav-link sidebar-btn">Attendance Report</a>
             </li>
         </ul>
     </div>
@@ -60,7 +61,7 @@
     <!-- Main Content -->
     <main>
         <h3 class="m-5">Welcome back, Admin!</h3>
-        <div class="row row-col-3">
+        <div class="row row-col-3 mb-4">
             <div class="col">
                 <div class="stat-card shadow ms-auto">
                     <div class="flex-group">
@@ -96,9 +97,116 @@
                 </div>
             </div>
         </div>
-            
+        <div class="row graph row-cols-2">
+            <div class="col">
+                <div class="card ms-auto me-auto">
+                    <canvas id="adminChart" class="p-5"></canvas>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card ms-auto me-auto">
+                    <canvas id="studentChart" class="p-5"></canvas>
+                </div>
+            </div>
+        </div>
+        <script>
+            const adminLabel = [
+                'SOBM',
+                'SOCT',
+                'SOGS',
+                'SOMAQS',
+                'SOE',
+                'SOFS',
+                'SOMAD'
+            ];
+            const studentLabel = [
+                'Foundation',
+                'Diploma',
+                'Bachelor Degree',
+                'Master Degree',
+                'PhD'
+            ];
+            const adminData = {
+                labels: adminLabel,
+                datasets: [{
+                    label: 'Number of Lecturers',
+                    backgroundColor: 'rgb(255, 60, 75)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data:[10, 20, 3, 40, 10, 15, 36]
+                }]
+            };
+            const studentData = {
+                labels:[
+                    'Foundation',
+                    'Diploma',
+                    'Bachelor Degree',
+                    'Master Degree',
+                    'PhD'
+                ],
+                datasets:[{
+                    label: 'Number of Students',
+                    backgroundColor: [
+                        'rgb(255, 180, 180)',
+                        'rgb(254, 227, 236)',
+                        'rgb(249, 197, 213)',
+                        'rgb(249, 153, 183)',
+                        'rgb(242, 120, 159)'
+                    ],
+                    borderColor: 'rgb(152, 30, 45)',
+                    data:[10, 20, 10, 15, 30]
+                }]
+            };
+            const adminConfig ={
+                type: 'line',
+                data: adminData,
+                options: {
+                    transition:{
+                        resize: 200,
+                        active: 600
+                    }
+                }
+            };
+            const studentConfig = {
+                type: 'bar',
+                data: studentData,
+                options: {
+                    radius: '50%',
+                    cutout: '50%'
+                }
+            };
+            const adminChart = new Chart(document.getElementById('adminChart'), adminConfig);
+            const studentChart = new Chart(document.getElementById('studentChart'), studentConfig);
+        </script>
+        <div class="title my-3 mt-2 fs-1 text-center" style="font-weight: 500;">
+            Today Classes
+        </div>
+        <table class="table table-hover my-5 align-middle">
+            <thead>
+                <th>
+                    Monday, 28/02/2022
+                </th>
+            </thead>
+            <tr>
+                <td>
+                    <div class="row row-cols-1">
+                        <div>class ID</div>
+                        <div>Module Name</div>
+                        <div>Intake</div>
+                    </div>
+                </td>
+                <td>
+                    Location
+                </td>
+                <td>
+                    Start Time - End Time
+                </td>
+                <td>
+                    Lecturer Name
+                </td>
+            </tr>
+        </table>
 
-            
+
     </main>
 
     <footer>
@@ -112,5 +220,6 @@
     <script src="/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    
 </body>
 </html>
