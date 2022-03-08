@@ -157,30 +157,55 @@ try {
 }
 function timetable(t){
     if (t == 1){
+        document.querySelector(".flx-date1").style.backgroundColor ="grey"
+        document.querySelector(".flx-date2").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date3").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date4").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date5").style.backgroundColor ="inherit"
         document.querySelector(".table1").style.display = "flex"
         document.querySelector(".table2").style.display = "none"
         document.querySelector(".table3").style.display = "none"
         document.querySelector(".table4").style.display = "none"
         document.querySelector(".table5").style.display = "none"
     }else if (t == 2){
+        document.querySelector(".flx-date1").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date2").style.backgroundColor ="grey"
+        document.querySelector(".flx-date3").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date4").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date5").style.backgroundColor ="inherit"
         document.querySelector(".table1").style.display = "none"
         document.querySelector(".table2").style.display = "flex"
         document.querySelector(".table3").style.display = "none"
         document.querySelector(".table4").style.display = "none"
         document.querySelector(".table5").style.display = "none"
     }else if(t == 3){
+        document.querySelector(".flx-date1").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date2").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date3").style.backgroundColor ="grey"
+        document.querySelector(".flx-date4").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date5").style.backgroundColor ="inherit"
         document.querySelector(".table1").style.display = "none"
         document.querySelector(".table2").style.display = "none"
         document.querySelector(".table3").style.display = "flex"
         document.querySelector(".table4").style.display = "none"
         document.querySelector(".table5").style.display = "none"
     }else if (t == 4){
+        document.querySelector(".flx-date1").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date2").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date3").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date4").style.backgroundColor ="grey"
+        document.querySelector(".flx-date5").style.backgroundColor ="inherit"
         document.querySelector(".table1").style.display = "none"
         document.querySelector(".table2").style.display = "none"
         document.querySelector(".table3").style.display = "none"
         document.querySelector(".table4").style.display = "flex"
         document.querySelector(".table5").style.display = "none"
     }else if (t == 5){
+        document.querySelector(".flx-date1").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date2").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date3").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date4").style.backgroundColor ="inherit"
+        document.querySelector(".flx-date5").style.backgroundColor ="grey"
         document.querySelector(".table1").style.display = "none"
         document.querySelector(".table2").style.display = "none"
         document.querySelector(".table3").style.display = "none"
@@ -188,7 +213,32 @@ function timetable(t){
         document.querySelector(".table5").style.display = "flex"
     }
 }
+function checkOTP(y){
+    if (y == 1){
+        let otp1 = document.getElementById("otp1").value;
+        if (otp1.length == 1){
+            document.getElementById("otp1").blur();
+            document.getElementById("otp1").readOnly = true;
+            document.getElementById("otp2").focus();
+        }
+    }else if (y == 2){
+        let otp2 = document.getElementById("otp2").value;
+        if (otp2.length == 1){
+            document.getElementById("otp2").blur();
+            document.getElementById("otp2").readOnly = true;
+            document.getElementById("otp3").focus();
+        }
+    }else if (y == 3){
+        let otp3 = document.getElementById("otp3").value;
+        if (otp3.length == 1){
+            document.getElementById("otp3").blur();
+            document.getElementById("otp3").readOnly = true;
+        }
+}}
 
-
-
-
+function get_OTP(){
+    let q = document.getElementById("otp1").value;
+    let w = document.getElementById("otp2").value;
+    let e = document.getElementById("otp3").value;
+    let realotp = (""+ q + w + e)
+}
