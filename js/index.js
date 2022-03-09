@@ -235,10 +235,13 @@ function checkOTP(y){
             document.getElementById("otp3").readOnly = true;
         }
 }}
-
 function get_OTP(){
     let q = document.getElementById("otp1").value;
     let w = document.getElementById("otp2").value;
     let e = document.getElementById("otp3").value;
     let realotp = (""+ q + w + e)
+}
+function remove(){
+    document.getElementById("content-submission1").innerHTML="";
+    document.getElementById("content-submission2").innerHTML="";
 }

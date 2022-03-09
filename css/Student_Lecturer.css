@@ -26,7 +26,7 @@
     height: auto;
 }
 .flx-date1,.flx-date2,.flx-date3,.flx-date4,.flx-date5{
-    padding: 1rem;
+    padding: 2rem;
     cursor: pointer;
     user-select: none;
 }
@@ -48,13 +48,13 @@
 }
 .table1,.table2,.table3,.table4,.table5{
     display: inline-flex;
-    gap: 11rem;
+    gap: 14rem;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
     border-right: 1px solid black;
     min-height: 100px;
     overflow: auto;
-    width: 933px;
+    width: 1093px;
     word-wrap: break-word;
 }
 .table2,.table3,.table4,.table5{
@@ -117,4 +117,65 @@ input[type=number]{
 #attend-record{
     display: flex;
     gap: 5rem;
+}
+/* Module Page */
+.title-name{
+    border-bottom: 1px solid black;
+}
+.folder-name{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.list-group-item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+#folder-butt:focus{
+    outline: none;
+    box-shadow: none;
+}
+#module-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+i{
+    font-size: 20px;
+}
+/* Submission Page */
+.instruction{
+    background-color: lightblue;
+    padding: 1rem;
+    height: auto;
+    width: 100%;
+}
+table{
+    width: 100%;
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+td{
+    background-color: burlywood;
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 1rem;
+}
+.submission-page{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+.name-submission{
+    width: 15%;
+    text-align: center
 }
