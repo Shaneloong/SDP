@@ -165,6 +165,9 @@ main{
     width: 25%;
 }
 
+.graph{
+    margin: 120px 30px;
+}
 /* Account View */
 .user-table{
     /* border-collapse: separate; */
