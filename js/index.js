@@ -157,7 +157,7 @@ try {
 }
 function timetable(t){
     if (t == 1){
-        document.querySelector(".flx-date1").style.backgroundColor ="grey"
+        document.querySelector(".flx-date1").style.backgroundColor ="lightblue"
         document.querySelector(".flx-date2").style.backgroundColor ="inherit"
         document.querySelector(".flx-date3").style.backgroundColor ="inherit"
         document.querySelector(".flx-date4").style.backgroundColor ="inherit"
@@ -169,7 +169,7 @@ function timetable(t){
         document.querySelector(".table5").style.display = "none"
     }else if (t == 2){
         document.querySelector(".flx-date1").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date2").style.backgroundColor ="grey"
+        document.querySelector(".flx-date2").style.backgroundColor ="lightblue"
         document.querySelector(".flx-date3").style.backgroundColor ="inherit"
         document.querySelector(".flx-date4").style.backgroundColor ="inherit"
         document.querySelector(".flx-date5").style.backgroundColor ="inherit"
@@ -181,7 +181,7 @@ function timetable(t){
     }else if(t == 3){
         document.querySelector(".flx-date1").style.backgroundColor ="inherit"
         document.querySelector(".flx-date2").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date3").style.backgroundColor ="grey"
+        document.querySelector(".flx-date3").style.backgroundColor ="lightblue"
         document.querySelector(".flx-date4").style.backgroundColor ="inherit"
         document.querySelector(".flx-date5").style.backgroundColor ="inherit"
         document.querySelector(".table1").style.display = "none"
@@ -193,7 +193,7 @@ function timetable(t){
         document.querySelector(".flx-date1").style.backgroundColor ="inherit"
         document.querySelector(".flx-date2").style.backgroundColor ="inherit"
         document.querySelector(".flx-date3").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date4").style.backgroundColor ="grey"
+        document.querySelector(".flx-date4").style.backgroundColor ="lightblue"
         document.querySelector(".flx-date5").style.backgroundColor ="inherit"
         document.querySelector(".table1").style.display = "none"
         document.querySelector(".table2").style.display = "none"
@@ -205,7 +205,7 @@ function timetable(t){
         document.querySelector(".flx-date2").style.backgroundColor ="inherit"
         document.querySelector(".flx-date3").style.backgroundColor ="inherit"
         document.querySelector(".flx-date4").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date5").style.backgroundColor ="grey"
+        document.querySelector(".flx-date5").style.backgroundColor ="lightblue"
         document.querySelector(".table1").style.display = "none"
         document.querySelector(".table2").style.display = "none"
         document.querySelector(".table3").style.display = "none"
@@ -241,7 +241,53 @@ function get_OTP(){
     let e = document.getElementById("otp3").value;
     let realotp = (""+ q + w + e)
 }
-function remove(){
-    document.getElementById("content-submission1").innerHTML="";
-    document.getElementById("content-submission2").innerHTML="";
-}
+//Remove the student submission value
+$(function (){
+    $("#remove").on("click",function (){
+        $(".name-submission").next().empty()
+    })
+})
+//Change the attendance record colour according to Present or Absent
+$(function() {
+    let abs = $(".present-type").text()
+    if (abs == "Present") {
+        $(".present-type").parent().css("background-color", "green");
+    } else if (abs == "Absent") {
+        $(".present-type").parent().css("background-color", "red");
+    }
+})
+//Add Folder
+$(function () {
+    $("#Add-folder").on("click", function () {
+        $(".title-name").each(function (i, v) {
+            if (i == 0) {
+                $(this).after("<div class=\"accordion-item\">\n" +
+                    "                <h2 class=\"accordion-header\" id=\"headingOne\">\n" +
+                    "                    <button id=\"folder-butt\" class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\n" +
+                    "                        <div class=\"folder-name\">\n" +
+                    "                            <i class=\"uil uil-folder\"></i>\n" +
+                    "                            <div class=\"file-name\">Tutorial week 1</div>\n" +
+                    "                        </div>\n" +
+                    "                    </button>\n" +
+                    "                </h2>\n" +
+                    "                <div id=\"collapseOne\" class=\"accordion-collapse collapse show\" aria-labelledby=\"headingOne\" data-bs-parent=\"#accordionExample\">\n" +
+                    "                    <div class=\"accordion-body\">\n" +
+                    "                        <ul class=\"list-group\">\n" +
+                    "                            <li class=\"list-group-item\" style=\"justify-content: space-between\">\n" +
+                    "                                <div style=\"display: flex;align-items: center;gap: 1rem\">\n" +
+                    "                                    <i class=\"uil uil-file-download-alt\"></i>\n" +
+                    "                                    <div class=\"file-name\">An item</div>\n" +
+                    "                                </div>\n" +
+                    "                                <div>\n" +
+                    "                                    <i class=\"uil uil-trash-alt\"></i>\n" +
+                    "                                </div>\n" +
+                    "                            </li>\n" +
+                    "                        </ul>\n" +
+                    "                    </div>\n" +
+                    "                </div>\n" +
+                    "            </div>")
+            }
+        })
+    })
+})
+

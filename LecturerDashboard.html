@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/Student_Lecturer.css">
-    <!-- Jquery Library-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Attendance Record</title>
+
+    <title>Lecturer Dashboard</title>
 </head>
 <body style="background-color: floralwhite; background-size: cover">
 <!-- Top Nav Bar -->
@@ -25,7 +24,7 @@
                 <a class="navbar-brand" href="#"><img src="/Logo/Full_Final_Neptune_logo.png" class="logo" alt=""></a>
                 <ul class="navbar-nav">
                     <li class="nav-item nav-link">
-                        Attendance Record
+                        Lecturer Dashboard
                     </li>
                 </ul>
             </div>
@@ -39,57 +38,49 @@
 <div class="sidebar-menu show-sidebar">
     <ul class="sidebar-content">
         <li class="nav-item">
-            <a href="StudentDashboard.html" class="nav-link sidebar-btn">Dashboard</a>
+            <a href="LecturerDashboard.html" class="nav-link sidebar-btn">Dashboard</a>
         </li>
         <li class="nav-item">
-            <a href="Timetable%20Student.html" class="nav-link sidebar-btn">Timetable</a>
+            <a href="Timetable_Lecturer.html" class="nav-link sidebar-btn">Timetable</a>
         </li>
         <li class="nav-item">
-            <a href="attendance%20Record.html" class="nav-link sidebar-btn">Attendance</a>
+            <a href="" class="nav-link sidebar-btn">Attendance</a>
         </li>
     </ul>
 </div>
 <!-- Main Content -->
-<main>
-   <div id="attend-record">
-       <div class="sem" >
-           <div id="title" class="d-flex p-2 bd-highlight">SEM 1</div>
-           <div class="accordion-item">
-               <h2 class="accordion-header" id="headingOne">
-                   <button id="folder-butt" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                       <div class="folder-name">
-                           <div class="file-name"><b>Introduction to artificial Intelligence</b></div>
-                           <div>Class: 10/10</div>
-                           <div>100%</div>
-                       </div>
-                   </button>
-               </h2>
-               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                   <div class="accordion-body">
-                       <ul class="list-group">
-                           <li class="list-group-item" style="gap: 5rem">
-                               <div class="file-name"><b>LectureClass</b></div>
-                               <div>3/4/2022</div>
-                               <div>10.00am - 12.00pm</div>
-                               <div>D-9-11</div>
-                               <div class="present-type">Absent</div>
-                           </li>
-                       </ul>
-                   </div>
-               </div>
-           </div>
-       </div>
-       <div class="percent" >
-           <div id="overall-attend">
-               <div><h2>IntakeID</h2></div>
-               <div>Overall Attendance</div>
-               <div style="font-size: 30px">100%</div>
-               <a href="Signattendance.html"><button type="button" class="btn btn-success">Sign Attendance</button></a>
-           </div>
-       </div>
-   </div>
+<main id="StudentDash">
+    <a href="">
+        <div class="module-container" style="width: 23rem;height: 20rem">
+            <img src="/Logo/Full_Final_Neptune_logo.png" class="module-image" alt="neptune" width="auto" height="auto">
+            <div class="module-name">
+                <div class="mod">
+                    System Development Project
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="">
+        <div class="module-container" style="width: 23rem;height: 20rem">
+            <img src="/Logo/Full_Final_Neptune_logo.png" class="module-image" alt="neptune" width="auto" height="auto">
+            <div class="module-name">
+                <div class="mod">
+                    System Development Project
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="">
+        <div class="module-container" style="width: 23rem;height: 20rem">
+            <img src="/Logo/Full_Final_Neptune_logo.png" class="module-image" alt="neptune" width="auto" height="auto">
+            <div class="module-name">
+                <div class="mod">
+                    System Development Project
+                </div>
+            </div>
+        </div>
+    </a>
 </main>
-
 <footer>
     <p class="pt-3">
         Neptune &copy;, <script>var date = new Date(); document.write(date.getFullYear());</script>
