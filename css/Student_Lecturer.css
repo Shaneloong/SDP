@@ -153,12 +153,12 @@ i{
     height: auto;
     width: 100%;
 }
-table{
+#student-submission{
     width: 100%;
     border: 1px solid white;
     border-collapse: collapse;
 }
-td{
+.name-submission,#content-submission1,#content-submission2{
     background-color: burlywood;
     border: 1px solid white;
     border-collapse: collapse;
@@ -179,4 +179,9 @@ td{
 .name-submission{
     width: 15%;
     text-align: center
+}
+/* Create Submission */
+#input-container{
+    width: 50%;
+    margin: auto;
 }

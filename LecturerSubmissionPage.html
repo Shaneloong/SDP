@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/Student_Lecturer.css">
     <!-- Jquery Library-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Lecturer Module</title>
+    <title>Lecturer Submission</title>
 </head>
 <body style="background-color: floralwhite; background-size: cover">
 <!-- Top Nav Bar -->
@@ -25,7 +25,7 @@
                 <a class="navbar-brand" href="#"><img src="/Logo/Full_Final_Neptune_logo.png" class="logo" alt=""></a>
                 <ul class="navbar-nav">
                     <li class="nav-item nav-link">
-                        Lecturer Module
+                        Lecturer Submission
                     </li>
                 </ul>
             </div>
@@ -45,27 +45,25 @@
             <a href="Timetable_Lecturer.html" class="nav-link sidebar-btn">Timetable</a>
         </li>
         <li class="nav-item">
-            <a href="attendance%20Record.html" class="nav-link sidebar-btn">Attendance</a>
+            <a href="" class="nav-link sidebar-btn">Attendance</a>
         </li>
     </ul>
 </div>
 <!-- Main Content -->
 <main>
-    <div id="module-content">
-        <div id="module-container">
-            <div class="title-name" style="display: flex">
-                <div style="font-size: 24px" >Learning Materials</div>
-                <div>
-                    <button id="Add-Material" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Material</button>
-                    <button id="Add-folder" class="btn btn-success">Add Folder</button>
-                </div>
+    <div class="submission-page">
+        <div>
+            <h5><u>Submission Tittle - CLassID</u></h5>
+            <div class="instruction">
+                <h5><u>Instruction</u></h5>
+                <p>It is a long-established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button id="folder-butt" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <div class="folder-name">
                             <i class="uil uil-folder"></i>
-                            <div class="file-name">Tutorial week 1</div>
+                            <div class="file-name">Submission Materials</div>
                         </div>
                     </button>
                 </h2>
@@ -77,59 +75,48 @@
                                     <i class="uil uil-file-download-alt"></i>
                                     <div class="file-name">An item</div>
                                 </div>
-                                <div>
-                                    <i class="uil uil-trash-alt"></i>
-                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+            <br>
+            <div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div>Visible Date :</div>
+                        <div>1111111</div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>Due Date :</div>
+                        <div>11111111</div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div>
-            <div class="title-name">
-                <div style="font-size: 24px">
-                    Submission
-                </div>
-                <div>
-                    <a href="CreateSubmission.html" target="_blank"><button class="btn btn-success">Create Submission</button></a>
-                </div>
-            </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <i  class="uil uil-file-upload-alt"></i>
-                    <a href="LecturerSubmissionPage.html"><div class="file-name">An item</div></a>
-                </li>
-            </ul>
+            <table class="table">
+                <thead>
+                <tr class="table-secondary">
+                    <th scope="col">Name</th>
+                    <th scope="col">Submission Material</th>
+                    <th scope="col">Submission Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <a href="">
+                    <tr class="table-secondary">
+                        <td>Wong Hou Yee</td>
+                        <td>WDT.PDF</td>
+                        <td>3/4/2022 1500</td>
+                    </tr>
+                </a>
+                </tbody>
+            </table>
         </div>
-    </div>
-    <div>
-
     </div>
 </main>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog ">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label">Learning Material</label>
-                        <input class="form-control" type="file" id="formFile">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 <footer>
     <p class="pt-3">
         Neptune &copy;, <script>var date = new Date(); document.write(date.getFullYear());</script>

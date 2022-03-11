@@ -290,4 +290,13 @@ $(function () {
         })
     })
 })
-
+//Display Submission Material Name
+function ShowFilename(){
+    let number = document.getElementById("sub-material").files.length
+    let input = document.getElementById("sub-material")
+    let output = "";
+    for (let i = 0; i <number; i++){
+        output+= input.files.item(i).name + " | ";
+    }
+    document.getElementById("file-name").textContent ="Selected File:"+output
+}
