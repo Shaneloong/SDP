@@ -300,3 +300,7 @@ function ShowFilename(){
     }
     document.getElementById("file-name").textContent ="Selected File:"+output
 }
+//Delete Learning Materials
+$("#remove-material").click(function (){
+    $(this).parentsUntil(".list-group").remove()
+})
