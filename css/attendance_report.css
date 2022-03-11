@@ -1,0 +1,16 @@
+.nav-link{
+    cursor: pointer;
+}
+
+.nav-link.active{
+    color: #fff !important;
+}
+
+.tab{
+    width: 100%;
+    border: 1px solid #dee2e6 ;
+    border-top: none;
+    min-height: 250px;
+    border-radius: 0 0 8px 8px;
+    padding: 25px;
+}

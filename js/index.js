@@ -64,7 +64,7 @@ function showForm(form){
 }
 
 try {
-    const todayDate = new Date("March 6, 2022");
+    const todayDate = new Date();
     const day = todayDate.getDay();
     const different = todayDate.getDate() - day + (day === 0 ? -6 : 1);
     let dayName;
@@ -92,7 +92,7 @@ try {
                 break;
             case 5:
                 dayName = "Friday";
-            break;
+                break;
             default:
                 break;
         }
@@ -239,7 +239,7 @@ function get_OTP(){
     let q = document.getElementById("otp1").value;
     let w = document.getElementById("otp2").value;
     let e = document.getElementById("otp3").value;
-    let realotp = (""+ q + w + e)
+    let realotp = (""+ q + w + e);
 }
 //Remove the student submission value
 $(function (){

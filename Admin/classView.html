@@ -84,6 +84,12 @@
                         <div class="col">
                             15/03/2020
                         </div>
+                        <div class="col">
+                            Class Type:
+                        </div>
+                        <div class="col">
+                            Lecture
+                        </div>
                     </div>
                 </div>
                 <h5 class="my-3">Lecturer Information</h5>
@@ -106,7 +112,9 @@
                     <form action="" method="post">
                         <div class="mb-4">
                             <label for="lecturer" class="form-label">Lecturer</label>
-                            <input type="text" class="form-control" id="lecturer" placeholder="Lecturer" name="">
+                            <select name="" class="form-select" id="lecturerID">
+                                <option disabled selected>Select a Lecturer</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Assign Lecturer</button>
                     </form>
