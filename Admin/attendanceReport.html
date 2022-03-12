@@ -9,7 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
+    <link rel="stylesheet" href="/css/attendance_report.css">
     <link rel="stylesheet" href="/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <title>Attendance Report</title>
 </head>
@@ -59,12 +62,88 @@
     
     <!-- Main Content -->
     <main>
-        <div class="container">
-            <div class="row row-cols-2">
-                <div class="col">
-                    
+        <h2 class="text-center">Attendance Report</h2>
+        <ul class="nav nav-tabs nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" id="intake-report">
+                    Intake Report
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="student-report">
+                    Student Report
+                </a>
+            </li>
+        </ul>
+        <div class="tab" id="intake-report-tab">
+            <div class="container-fluid">
+                <div class="flex-group">
+                    <div class="input-group w-25 mb-3">
+                        <input type="text" class="form-control w-25" placeholder="Class ID" name="classID" id="searchIntakeID" required>
+                        <button class="btn btn-primary" type="button"><i class="uil uil-search"></i></button>
+                    </div>
+                    <div>
+                        
+                    </div>
                 </div>
+                <table class="table table-hover table-striped table-responsive" id="class-attendance-report">
+                    <thead>
+                        <th>Class ID</th>
+                        <th>Attendance Record</th>
+                        <th>Date</th>
+                        <th>Number of Students</th>
+                    </thead>
+                    <tr>
+                        <td>500003</td>
+                        <td>
+                            Present: 30
+                            Absent: 2
+                        </td>
+                        <td>22/2/2022</td>
+                        <td>32</td>
+                    </tr>
+                </table>
+                    
+
             </div>
+        </div>
+        <div class="tab hidden" id="student-report-tab">
+            <div class="container-fluid">
+                <div class="input-group w-25 mb-3">
+                    <input type="text" class="form-control w-25" placeholder="Student ID" id="searchStudentID" required>
+                    <button class="btn btn-primary" type="button"><i class="uil uil-search"></i></button>
+                </div>
+            <table class="table table-hover align-middle table-striped table-responsive" id="student-attendance-report">
+                <thead>
+                    <th>Student ID</th>
+                    <th>Class ID</th>
+                    <th>Attendance Record</th>
+                    <th>Date</th>
+                    <th>Semester Number</th>
+                </thead>
+                <tr>
+                    <td rowspan="5">TP060278</td>
+                    <td>5000001</td>
+                    <td>Present</td>
+                    <td>02/02/2022</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>5000002</td>
+                    <td>Present</td>
+                    <td>02/03/2022</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>5000003</td>
+                    <td>Present</td>
+                    <td>02/03/2022</td>
+                    <td>5</td>
+                </tr>
+            </table>
+                
+
+        </div>
         </div>
     </main>
 
@@ -76,6 +155,28 @@
     </footer>
 
     <!-- JS Dependency -->
+    <script>
+        const intakeTab = document.getElementById('intake-report-tab');
+        const studentTab = document.getElementById('student-report-tab');
+        let tab1 = document.getElementById('intake-report');
+        let tab2 = document.getElementById('student-report');
+        const tabs = document.getElementsByClassName('nav-link');
+        Array.from(tabs).forEach(element=>{
+            element.addEventListener('click', ()=>{
+                if(element.id === 'intake-report'){
+                    tab1.classList.add('active');
+                    tab2.classList.remove('active');
+                    intakeTab.classList.remove('hidden');
+                    studentTab.classList.add('hidden');
+                }else{
+                    tab1.classList.remove('active');
+                    tab2.classList.add('active');
+                    intakeTab.classList.add('hidden');
+                    studentTab.classList.remove('hidden');
+                }
+            })
+        });
+    </script>
     <script src="/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>

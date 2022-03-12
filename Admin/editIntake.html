@@ -13,7 +13,7 @@
 
 
 
-    <title>Create Timetable</title>
+    <title>Create New Class</title>
 </head>
 <body>
     <!-- Top Navigation bar -->
@@ -61,55 +61,47 @@
     
     <!-- Main Content -->
     <main>
-        <h1 class="text-center me-auto ms-auto">Create Timetable</h1>
+        <h1 class="text-center me-auto ms-auto">Edit Intake</h1>
         <form action="" class="form" method="POST">
             <div class="mb-4">
-                <label for="Name" class="form-label">Class ID</label>
-                <input type="text" class="form-control" id="Name" placeholder="Class ID" name="">
+                <label for="classID" class="form-label">Intake ID</label>
+                <input type="text" class="form-control" id="classID" placeholder="Intake ID" name="classID" readonly>
             </div>
-            <div class="mb-4 row" >
-                <div class="col-6">
-                    <label for="classroom" class="form-label">Classroom</label>
-                    <input type="text" class="form-control" id="classroom" placeholder="Classroom" name="">
-                </div>
-                <div class="col-6">
-                    <label for="date" class="form-label">Date</label>
-                    <input type="date" class="form-control" id="date" name="date">
+            <div class="mb-4">
+                <div class="">
+                    <label for="Course" class="form-label">Course</label>
+                    <input type="text" class="form-control" id="Course" placeholder="Course" name="courseID">
                 </div>
             </div>
             <div class="mb-4 row">
                 <div class="col-6">
-                    <label for="starttime" class="form-label">Time</label>
-                    <input type="time" class="form-control" id="starttime" name="starttime" step="10">
+                    <label for="commencementDate" class="form-label">Commencement Date</label>
+                    <input type="date" class="form-control" id="commencementDate" name="commencementDate">
                 </div>
                 <div class="col-6">
-                    <label for="starttime" class="form-label">Duration</label>
-                    <select name="duration" id="" class="form-select">
-                        <option selected disabled>Select Duration</option>
-                        <option value="1">1 Hour</option>
-                        <option value="1.25">1 Hour 15 Minutes</option>
-                        <option value="1.5">1 Hour 30 Minutes</option>
-                        <option value="2">2 Hours</option>
-                    </select>
+                    <label for="completionDate" class="form-label">Completion Date</label>
+                    <input type="date" class="form-control" id="completionDate" name="completionDate" readonly>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Create Timetable</button>
+            <button type="submit" class="btn btn-primary w-50 ms-auto me-auto flex-button">Update Class</button>
         </form>
-
-            
     </main>
 
     <footer>
         <p class="pt-3">
             Neptune &copy;, <script>var date = new Date(); document.write(date.getFullYear());</script>
         </p>
+        
     </footer>
 
     <!-- JS Dependency -->
     <script>
-        document.getElementById('starttime').addEventListener('change', ()=>{
-            let time = document.getElementById('starttime').value.substr(0, 6);
-            document.getElementById('starttime').value = time + '00';
+        document.getElementById('commencementDate').addEventListener('change', ()=>{
+            let inputDate = document.getElementById('commencementDate').value;
+            let date = new Date(inputDate);
+            date.getDate(date.setDate(date.getDate() + 14 *7));
+            
+            document.getElementById('completionDate').valueAsDate = date;
         });
     </script>
     <script src="/js/index.js"></script>
