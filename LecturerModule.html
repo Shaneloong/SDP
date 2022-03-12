@@ -57,7 +57,7 @@
                 <div style="font-size: 24px" >Learning Materials</div>
                 <div>
                     <button id="Add-Material" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Material</button>
-                    <button id="Add-folder" class="btn btn-success">Add Folder</button>
+                    <button id="Add-folder" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#folder">Add Folder</button>
                 </div>
             </div>
             <div class="accordion-item">
@@ -117,11 +117,41 @@
             </div>
             <div class="modal-body">
                 <form action="">
+                    <div>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <br>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Learning Material</label>
                         <input class="form-control" type="file" id="formFile">
                     </div>
                 </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal2 -->
+<div class="modal fade" id="folder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="folderLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="folder-name" class="form-label">FolderName</label>
+                    <input type="name" class="form-control" id="folder-name" placeholder="">
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
