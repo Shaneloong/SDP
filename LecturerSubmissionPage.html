@@ -82,16 +82,16 @@
             </div>
             <br>
             <div>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <div>Visible Date :</div>
-                        <div>1111111</div>
-                    </li>
-                    <li class="list-group-item">
-                        <div>Due Date :</div>
-                        <div>11111111</div>
-                    </li>
-                </ul>
+                <table id="student-submission">
+                    <tr>
+                        <td class="name-submission">Visible Date</td>
+                        <td id="content-submission1"></td>
+                    </tr>
+                    <tr>
+                        <td class="name-submission">Due Date</td>
+                        <td id="content-submission2"></td>
+                    </tr>
+                </table>
             </div>
         </div>
         <div>
@@ -110,14 +110,38 @@
                         <td>Wong Hou Yee</td>
                         <td>WDT.PDF</td>
                         <td>3/4/2022-1500</td>
-                        <td><a href="ViewStudentSubmission.html" ><i class="uil uil-eye" style="font-size: 20px;color:black"></i></a></td>
+                        <td><i class="uil uil-eye" style="font-size: 20px;color:black" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </main>
-
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover">
+                    <tr>
+                        <td class="table-info" style="width: 160px">File Submitted</td>
+                        <td class="table-success"></td>
+                    </tr>
+                    <tr>
+                        <td class="table-info">Submission Date</td>
+                        <td class="table-success"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
 <footer>
     <p class="pt-3">
         Neptune &copy;, <script>var date = new Date(); document.write(date.getFullYear());</script>

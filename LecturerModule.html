@@ -83,7 +83,9 @@
                             </li>
                         </ul>
                     </div>
+                    <div><a href=""><button class="btn btn-danger">Delete Folder</button></a></div>
                 </div>
+
             </div>
         </div>
         <div>
@@ -96,9 +98,14 @@
                 </div>
             </div>
             <ul class="list-group">
-                <li class="list-group-item">
-                    <i  class="uil uil-file-upload-alt"></i>
-                    <a href="LecturerSubmissionPage.html"><div class="file-name">An item</div></a>
+                <li class="list-group-item" style="justify-content: space-between">
+                    <div style="display: flex;align-items: center;gap: 1rem">
+                        <i  class="uil uil-file-upload-alt"></i>
+                        <a href="LecturerSubmissionPage.html"><div class="file-name">An item</div></a>
+                    </div>
+                    <div>
+                        <i id="remove-sub" class="uil uil-trash-alt"></i>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -115,27 +122,29 @@
                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form action="">
+            <form action="" method="post">
+                <div class="modal-body">
                     <div>
                         <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
+                            <option selected>Select Folder</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
+                            <option value="">Without Folder</option>
                         </select>
                     </div>
                     <br>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Learning Material</label>
-                        <input class="form-control" type="file" id="formFile">
+                        <input class="form-control" type="file" id="formFile" multiple onchange="ShowMaterialFilename()">
+                        <h6 id="material-name"></h6>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add Material</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -147,16 +156,18 @@
                 <h5 class="modal-title" id="folderLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="folder-name" class="form-label">FolderName</label>
-                    <input type="name" class="form-control" id="folder-name" placeholder="">
+            <form action="" method="post">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="folder-name" class="form-label">FolderName</label>
+                        <input type="name" class="form-control" id="folder-name" placeholder="">
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add folder</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -53,30 +53,43 @@
 <main>
   <div style="text-align: center"><h2>Create Submission</h2></div>
   <div id="input-container">
-    <form action="">
+    <form action="test.php" method="post">
+      <!-- Submission Tittle -->
       <div class="mb-3">
         <label for="sub-title" class="form-label">Submission Title</label>
-        <input type="text" class="form-control" id="sub-title" placeholder="Tutorial Week 2">
+        <input name="sub-title" type="text" class="form-control" id="sub-title" placeholder="Tutorial Week 2">
       </div>
+      <!-- Instruction -->
       <div class="mb-3">
         <label for="instruction" class="form-label">Instruction</label>
-        <textarea class="form-control" id="instruction" rows="3" style="height: 150px"></textarea>
+        <textarea name="instruction" class="form-control" id="instruction" rows="3" style="height: 150px"></textarea>
       </div>
+      <!-- Submission Material -->
       <div class="mb-3">
         <label class="form-label">Submission Material</label>
-        <input class="form-control" type="file" id="sub-material" multiple onchange="ShowFilename()">
+        <input name="upload_Sub-material[]" class="form-control" type="file" id="sub-material" multiple onchange="ShowSubmissionFilename()">
         <h6 id="file-name"></h6>
       </div>
+      <!-- Toggle Button -->
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="toggle-duedate">
+        <label class="form-check-label" for="toggle-duedate">Toggle Due date</label>
+      </div>
+      <br>
       <div class="row">
+        <!-- visible Date -->
         <div class="col">
           <label for="visible-date" class="form-label">Visible Date</label>
-          <input type="datetime-local" class="form-control" id="visible-date" placeholder="Example input placeholder">
+          <input name="Visible-Date" type="datetime-local" class="form-control" id="visible-date" placeholder="Example input placeholder">
         </div>
+        <!-- Due Date -->
         <div class="col">
           <label for="Due-Date" class="form-label">Due Date</label>
-          <input type="datetime-local" class="form-control" id="Due-Date" placeholder="Example input placeholder">
+          <input name="Due-Date" type="datetime-local" class="form-control" id="Due-Date" placeholder="Example input placeholder" >
         </div>
       </div>
+      <br>
+      <div align="center"><button type="submit" class="btn btn-success">Submit Button</button></div>
     </form>
   </div>
 

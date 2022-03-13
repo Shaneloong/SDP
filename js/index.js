@@ -256,51 +256,37 @@ $(function() {
         $(".present-type").parent().css("background-color", "red");
     }
 })
-//Add Folder
-$(function () {
-    $("#Add-folder").on("click", function () {
-        $(".title-name").each(function (i, v) {
-            if (i == 0) {
-                $(this).after("<div class=\"accordion-item\">\n" +
-                    "                <h2 class=\"accordion-header\" id=\"headingOne\">\n" +
-                    "                    <button id=\"folder-butt\" class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\n" +
-                    "                        <div class=\"folder-name\">\n" +
-                    "                            <i class=\"uil uil-folder\"></i>\n" +
-                    "                            <div class=\"file-name\">Tutorial week 1</div>\n" +
-                    "                        </div>\n" +
-                    "                    </button>\n" +
-                    "                </h2>\n" +
-                    "                <div id=\"collapseOne\" class=\"accordion-collapse collapse show\" aria-labelledby=\"headingOne\" data-bs-parent=\"#accordionExample\">\n" +
-                    "                    <div class=\"accordion-body\">\n" +
-                    "                        <ul class=\"list-group\">\n" +
-                    "                            <li class=\"list-group-item\" style=\"justify-content: space-between\">\n" +
-                    "                                <div style=\"display: flex;align-items: center;gap: 1rem\">\n" +
-                    "                                    <i class=\"uil uil-file-download-alt\"></i>\n" +
-                    "                                    <div class=\"file-name\">An item</div>\n" +
-                    "                                </div>\n" +
-                    "                                <div>\n" +
-                    "                                    <i class=\"uil uil-trash-alt\"></i>\n" +
-                    "                                </div>\n" +
-                    "                            </li>\n" +
-                    "                        </ul>\n" +
-                    "                    </div>\n" +
-                    "                </div>\n" +
-                    "            </div>")
-            }
-        })
-    })
-})
 //Display Submission Material Name
-function ShowFilename(){
+function ShowSubmissionFilename(){
     let number = document.getElementById("sub-material").files.length
     let input = document.getElementById("sub-material")
     let output = "";
     for (let i = 0; i <number; i++){
-        output+= input.files.item(i).name + " | ";
+        output+= "<div>" + "<b>" + input.files.item(i).name + "</b>" +"</div>";
     }
-    document.getElementById("file-name").textContent ="Selected File:"+output
+    document.getElementById("file-name").innerHTML ="Selected File:"+output
+}
+// Display Learning Material Name
+function ShowMaterialFilename(){
+    let number = document.getElementById("formFile").files.length
+    let input = document.getElementById("formFile")
+    let output = "";
+    for (let i = 0; i <number; i++){
+        output+= "<div>" + "<b>" + input.files.item(i).name + "</b>" +"</div>";
+    }
+    document.getElementById("material-name").innerHTML ="Selected File:"+output
 }
 //Delete Learning Materials
 $("#remove-material").click(function (){
     $(this).parentsUntil(".list-group").remove()
+})
+// Set current time when create submission
+$(document).ready(function(){
+    let now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    $('#visible-date').val(now.toISOString().slice(0,16));
+});
+//Toggle Due date
+$("#toggle-duedate").click(function (){
+    $("#Due-Date").parent().toggle();
 })
