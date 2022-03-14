@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
     <link rel="stylesheet" href="/css/attendance_report.css">
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .class-info tr{
+            border-style: none;
+            border: none;
+        }
+        .class-info td{
+            border-bottom-width: 0 !important;
+        }
+    </style>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -82,68 +91,183 @@
                         <input type="text" class="form-control w-25" placeholder="Class ID" name="classID" id="searchIntakeID" required>
                         <button class="btn btn-primary" type="button"><i class="uil uil-search"></i></button>
                     </div>
-                    <div>
-                        
+                </div>
+                <div class="card mt-4">
+                    <div class="container-fluid">
+                        <div class="flex-group flex-column my-5">
+                            <h2>Class ID</h2>
+                            <div class="container my-5">
+                                <div class="row ms-auto me-auto gap-5">
+                                    <div class="col">
+                                        <div class="row">
+                                            <table class="table table-responsive align-middle class-info" style="border-style: none;">
+                                                <tr>
+                                                    <td>Module: </td>
+                                                    <td>Database System</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Commencement Date: </td>
+                                                    <td>05-20-2021</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Completion Date:</td>
+                                                    <td>03-02-2022</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Class Type:</td>
+                                                    <td>Lecture</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Lecturer:</td>
+                                                    <td>Alphonso Davies</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <table class="table table-responsive align-middle class-info" style="border-style: none;">
+                                            <tr>
+                                                <td>Intake: </td>
+                                                <td>
+                                                    <div class="flex-group align-items-start flex-column">
+                                                        <div>UCDF2005ICT(SE)</div>
+                                                        <div>UCDF2005ICT(SE)</div>
+                                                        <div>UCDF2005ICT(SE)</div>
+                                                        <div>UCDF2005ICT(SE)</div>
+                                                        <div>UCDF2005ICT(SE)</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="container my-5">
+                                <table class="table table-responsive table-hover align-middle">
+                                    <thead>
+                                        <th>Date</th>
+                                        <th>Attendance</th>
+                                        <th>Start Time</th>
+                                        <th>End Time</th>
+                                        <th>Attendance Created</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>02/03/2021</td>
+                                            <td>
+                                                <div class="flex-group flex-column align-items-start">
+                                                    <div id="present-stat">Present: 20</div>
+                                                    <div class="absent-stat">Absent: 30</div>
+                                                </div>
+                                            </td>
+                                            <td>08:30AM</td>
+                                            <td>09:30AM</td>
+                                            <td>02/03/2021 09:29:00AM</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <table class="table table-hover table-striped table-responsive" id="class-attendance-report">
-                    <thead>
-                        <th>Class ID</th>
-                        <th>Attendance Record</th>
-                        <th>Date</th>
-                        <th>Number of Students</th>
-                    </thead>
-                    <tr>
-                        <td>500003</td>
-                        <td>
-                            Present: 30
-                            Absent: 2
-                        </td>
-                        <td>22/2/2022</td>
-                        <td>32</td>
-                    </tr>
-                </table>
-                    
-
             </div>
         </div>
         <div class="tab hidden" id="student-report-tab">
             <div class="container-fluid">
-                <div class="input-group w-25 mb-3">
-                    <input type="text" class="form-control w-25" placeholder="Student ID" id="searchStudentID" required>
-                    <button class="btn btn-primary" type="button"><i class="uil uil-search"></i></button>
+                <div class="flex-group">
+                    <div class="input-group w-25 mb-3">
+                        <input type="text" class="form-control w-25" placeholder="Student ID" id="searchStudentID" required>
+                        <button class="btn btn-primary" type="button"><i class="uil uil-search"></i></button>
+                    </div>
                 </div>
-            <table class="table table-hover align-middle table-striped table-responsive" id="student-attendance-report">
-                <thead>
-                    <th>Student ID</th>
-                    <th>Class ID</th>
-                    <th>Attendance Record</th>
-                    <th>Date</th>
-                    <th>Semester Number</th>
-                </thead>
-                <tr>
-                    <td rowspan="5">TP060278</td>
-                    <td>5000001</td>
-                    <td>Present</td>
-                    <td>02/02/2022</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>5000002</td>
-                    <td>Present</td>
-                    <td>02/03/2022</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>5000003</td>
-                    <td>Present</td>
-                    <td>02/03/2022</td>
-                    <td>5</td>
-                </tr>
-            </table>
-                
-
-        </div>
+                <div class="card my-5">
+                    <div class="container-fluid">
+                        <div class="flex-group flex-column my-5">
+                            <h2>UCDF2005ICT</h2>
+                            <div class="container my-5">
+                                <div class="row">
+                                    <div class="col">
+                                        <table class="table table-responsive align-middle class-info">
+                                            <tr>
+                                                <td>Student Name:</td>
+                                                <td>Shane Super</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Intake ID:</td>
+                                                <td>UCDF2005 ICT(SE)</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col">
+                                        <table class="table table-responsive align-middle class-info">
+                                            <tr>
+                                                <td>Course:</td>
+                                                <td>Diploma in ICT(SE)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>NRIC</td>
+                                                <td>020920202020</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="fs-3">Semester 5</div>
+                                    <hr class="my-3 w-25">
+                                </div>
+                                <div class="accordion" id="Sem5-accordion">
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="header-subject-name">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#subject_name" aria-expanded="true" aria-controls="collapseOne">
+                                                Accordion Item #1
+                                            </button>
+                                        </div>
+                                        <div id="subject_name" class="accordion-collapse collapse show" aria-labelledby="header-subject-name" data-bs-parent="#Sem5-accordion">
+                                            <div class="accordion-body">
+                                                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="header-subject-name1">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subject_name1" aria-expanded="false" aria-controls="collapseOne">
+                                                Accordion Item #1
+                                            </button>
+                                        </div>
+                                        <div id="subject_name1" class="accordion-collapse collapse " aria-labelledby="header-subject-name1" data-bs-parent="#Sem5-accordion">
+                                            <div class="accordion-body">
+                                                <table class="table table-striped align-middle">
+                                                    <tr>
+                                                        <td>Class Type</td>
+                                                        <td>Attendance Status</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="header-subject-name2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subject_name2" aria-expanded="false" aria-controls="collapseOne">
+                                                Accordion Item #1
+                                            </button>
+                                        </div>
+                                        <div id="subject_name2" class="accordion-collapse collapse " aria-labelledby="header-subject-name2" data-bs-parent="#Sem5-accordion">
+                                            <div class="accordion-body">
+                                                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
