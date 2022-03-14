@@ -25,7 +25,7 @@
 }
 
 .absent{
-    background-color: rgba(213, 76, 76, 0.3) !important;
+    background-color: rgba(213, 76, 76, 0.1) !important;
 }
 
 .btn-present:hover{
@@ -33,7 +33,7 @@
 }
 
 .btn-absent{
-    background-color: rgba(213, 76, 76, 1.0);
+    background-color: rgba(213, 76, 76, 1);
     color: #fff;
 }
 
