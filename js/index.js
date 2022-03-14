@@ -5,17 +5,6 @@ document.getElementById("sidebar-toggler").addEventListener("click", ()=>{
 });
 
 
-try {
-    document.getElementById('roles').addEventListener('change', ()=>{
-        fieldChange();
-    });
-    document.getElementById('creationType').addEventListener('change', ()=>{
-        fieldChange();
-    })
-} catch (error) {
-    console.log(error);
-}
-
 function fieldChange(){
         let sharedForm = document.getElementsByClassName('shared-form');
         let creationType = document.getElementById('creationType');
@@ -32,8 +21,6 @@ function fieldChange(){
                 hideForm (lecturerForm);
                 document.querySelector('.bulk-student-form').classList.add('hidden');
             }
-                
-            // document.querySelector('.student-form').classList.add('hidden');
         }
         else if (document.getElementById('roles').value === 'Student'){
             if(creationType.value === "Single"){
@@ -60,7 +47,7 @@ function hideForm (lecturerForm){
 function showForm(form){
     Array.from(form).forEach(element=>{
         element.classList.remove('hidden');
-    })
+    });
 }
 
 try {

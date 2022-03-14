@@ -61,44 +61,46 @@
     
     <!-- Main Content -->
     <main>
-        <div class="flex-group justify-content-between">
-            <div>
-                <h2 class="fw-bold fs-1">Class ID</h2>
-                <div class="container w-50 ms-0">
-                    <div class="row row-cols-2">
-                        <div class="col">
-                            Module Name:
-                        </div>
-                        <div class="col">
-                            Programming with Python
-                        </div>
-                        <div class="col">
-                            Commencement Date:
-                        </div>
-                        <div class="col">
-                            14/02/2020
-                        </div>                   
-                        <div class="col">
-                            Completion Date:
-                        </div>
-                        <div class="col">
-                            15/03/2020
-                        </div>
-                        <div class="col">
-                            Class Type:
-                        </div>
-                        <div class="col">
-                            Lecture
+        <div class="container-fluid mb-4">
+            <div class="row row-cols-2 mb-5 justify-content-between">
+                <div class="col">
+                    <h2 class="fw-bold fs-1 mb-4">Class ID</h2>
+                    <div class="container ms-0">
+                        <div class="row row-cols-2">
+                            <div class="col p-2 text-white bg-secondary bg-gradient border rounded-start">
+                                Module Name:
+                            </div>
+                            <div class="col text-white bg-secondary bg-gradient p-2 border rounded-end">
+                                Programming with Python
+                            </div>
+                            <div class="col p-2 border rounded-start">
+                                Commencement Date:
+                            </div>
+                            <div class="col p-2 border rounded-end">
+                                14/02/2020
+                            </div>                   
+                            <div class="col text-white bg-secondary bg-gradient p-2 border rounded-start">
+                                Completion Date:
+                            </div>
+                            <div class="col text-white bg-secondary bg-gradient p-2 border rounded-end">
+                                15/03/2020
+                            </div>
+                            <div class="col p-2 border rounded-start">
+                                Class Type:
+                            </div>
+                            <div class="col p-2 border rounded-end">
+                                Lecture
+                            </div>
                         </div>
                     </div>
                 </div>
-                <h5 class="my-3">Lecturer Information</h5>
-            </div>
-            <div>
-                <!-- Modal Toggler -->
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assignLecturerModal">Assign Lecturer</button>
+                <div class="col d-flex">
+                    <img src="../icon/class-img.jpg" class="ms-auto rounded w-50 opacity-75" alt="">
+                </div>
             </div>
         </div>
+
+        <hr class="mx-auto">
 
         <!-- Assign Lecturer Modal -->
         <div class="modal fade" id="assignLecturerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -112,9 +114,10 @@
                     <form action="" method="post">
                         <div class="mb-4">
                             <label for="lecturer" class="form-label">Lecturer</label>
-                            <select name="" class="form-select" id="lecturerID">
-                                <option disabled selected>Select a Lecturer</option>
-                            </select>
+                            <input name="" list="availableLecturer" class="form-control" id="lecturerID">
+                            <datalist id="availableLecturer">
+                                <option value="Shane">
+                            </datalist>
                         </div>
                         <button type="submit" class="btn btn-primary">Assign Lecturer</button>
                     </form>
@@ -123,24 +126,57 @@
             </div>
         </div>
 
-        <div class="fluid-container rounded w-50 bg-secondary">
-            <div class="flex-group">
-                <p class="p-3 m-0 text-white">
-                    Lecturer ID Lecture Name
-                </p>
-                <a href="" class="btn btn-outline-light ms-auto me-4"><i class="uil uil-trash-alt"></i></a>
+        <!-- Lecturer Information -->
+        <div class="container-fluid my-4">
+            <div class="row row-cols-2 align-items-center">
+                <div class="col-7 py-2">
+                    <h3 class=" my-3">Lecturer Information</h3>
+                </div>
+                <div class="col-5 py-2">
+                    <div class="d-flex justify-content-end">
+                        <!-- Modal Toggler -->
+                        <button class="btn btn-primary me-5" data-bs-toggle="modal" data-bs-target="#assignLecturerModal">Assign Lecturer</button>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="flex-group rounded bg-secondary bg-gradient">
+                        <div>
+                            <p class="p-3 m-0 text-white">
+                                Lecturer ID Lecture Name
+                            </p>
+                        </div>
+                        
+                        <a href="" class="btn btn-outline-light ms-auto me-4"><i class="uil uil-trash-alt"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="flex-group justify-content-between">
-            <div>
-                <h5 class="my-4">Intake Information</h5>
+        <!-- Intake Information -->
+        <div class="container-fluid my-4">
+            <div class="flex-group justify-content-between">
+                <div>
+                    <h3 class="my-4">Intake Information</h3>
+                </div>
+                <div>
+                    <!-- Modal Toggler -->
+                    <button class="btn btn-primary me-5" data-bs-toggle="modal" data-bs-target="#enrolIntakeModal">Enrol Intake</button>
+                </div>
             </div>
-            <div>
-                <!-- Modal Toggler -->
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enrolIntakeModal">Enrol Intake</button>
-            </div>
+            <table class="table table-hover table-striped w-50 align-middle">
+                <thead>
+                    <th>Intake ID</th>
+                    <th>Course Name</th>
+                    <th class="w-25"></th>
+                </thead>
+                <tr>
+                    <td>UCDF2005ICT(SE)</td>
+                    <td>Diploma in ICT(SE)</td>
+                    <td class="w-25"><a href="" class="btn btn-outline-secondary"><i class="uil uil-trash-alt"></i></a></td>
+                </tr>
+            </table>
         </div>
+        
 
         <!-- Enrol Intake Modal -->
         <div class="modal fade" id="enrolIntakeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -163,18 +199,33 @@
             </div>
         </div>
         
-        <table class="table table-hover w-50 align-middle">
-            <thead>
-                <th>Intake ID</th>
-                <th>Course Name</th>
-                <th class="w-25"></th>
-            </thead>
-            <tr>
-                <td>UCDF2005ICT(SE)</td>
-                <td>Diploma in ICT(SE)</td>
-                <td class="w-25"><a href="" class="btn btn-outline-secondary"><i class="uil uil-trash-alt"></i></a></td>
-            </tr>
-        </table>
+        <div class="container-fluid my-4 py-4">
+            <div>
+                <h3 class="my-4">Student Information</h3>
+            </div>
+            <table class="table table-responsive table-hover table-striped align-middle w-75">
+                <thead>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Intake ID</th>
+                </thead>
+                <tr>
+                    <td>TP061237</td>
+                    <td>Maps</td>
+                    <td>UCDF2005ICT(SE)</td>
+                </tr>
+                <tr>
+                    <td>TP061237</td>
+                    <td>Maps</td>
+                    <td>UCDF2005ICT(SE)</td>
+                </tr>
+                <tr>
+                    <td>TP061237</td>
+                    <td>Maps</td>
+                    <td>UCDF2005ICT(SE)</td>
+                </tr>
+            </table>
+        </div>
     </main>
 
     <footer>

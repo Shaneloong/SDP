@@ -14,3 +14,37 @@
     border-radius: 0 0 8px 8px;
     padding: 25px;
 }
+
+.btn-present{
+    background-color: rgba(102, 222, 147, 1);
+    color: #fff;
+}
+
+.present{
+    background-color: rgba(102, 222, 147, 0.3) !important; 
+}
+
+.absent{
+    background-color: rgba(213, 76, 76, 0.3) !important;
+}
+
+.btn-present:hover{
+    background-color: #40F54F;
+}
+
+.btn-absent{
+    background-color: rgba(213, 76, 76, 1.0);
+    color: #fff;
+}
+
+.btn-absent:hover{
+    background-color: #DD4A48;
+}
+
+.bg-present{
+    background-color: rgba(102, 222, 147, 0.8);
+}
+
+.bg-absent{
+    background-color: rgba(213, 76, 76, 0.8);
+}

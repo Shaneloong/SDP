@@ -33,7 +33,7 @@
                     <i class="uil uil-user"></i>
                 </button>
             </div>
-          </nav>
+        </nav>
     </header>
 
     <!-- Side Navigation Bar -->
@@ -91,7 +91,8 @@
                 </div>
                 <div class="col mb-4 hidden shared-form">
                     <label for="AccountID" class="form-label">Account ID</label>
-                    <input type="text" class="form-control" id="AccountID" placeholder="Account ID" name="">
+                    <input type="text" class="form-control" id="accountID" placeholder="Account ID" name="">
+                    <span class="invalid-feedback">Please enter the right format of Account ID</span>
                 </div>
                 <div class="col mb-4 hidden shared-form">
                     <label for="Name" class="form-label">Name</label>
@@ -120,16 +121,17 @@
                         <option value="SOMAQS">School of Mathematics, Acturial and Quantitative</option>
                     </select>
                 </div>
-                <div class="col hidden hidden-form">
+                <div class="col mb-4 hidden hidden-form">
                     <label for="" class="form-label">Designation</label>
                     <select class="form-select" name="designation" aria-label="Default select example">
                         <option selected disabled>Select a Designation</option>
                         <option value="Part Time Lecturer">Part Time Lecturer</option>
                         <option value="Full Time Lecturer">Full Time Lecturer</option>
+                        <option value=""></option>
                     </select>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Create Account</button>
+            <button type="submit" class="btn btn-primary" id="enrolStudent">Create Account</button>
         </form>
     </main>
 
@@ -138,7 +140,33 @@
             Neptune &copy;, <script>var date = new Date(); document.write(date.getFullYear());</script>
         </p>
     </footer>
+    <script>
 
+        const studentPattern = /TP\d{6}/i;
+        document.getElementById('accountID').addEventListener('keyup', ()=>{
+            let text = document.getElementById('accountID').value;
+            let roles = document.getElementById('roles').value;
+            if(roles === "Student"){
+                if(studentPattern.test(text) && text.length === 8){
+                console.log("Correct");
+                document.getElementById('enrolStudent').removeAttribute('disabled');
+                document.getElementById('accountID').classList.add('is-valid');
+                document.getElementById('accountID').classList.remove('is-invalid');
+                }else{
+                    console.log("False");
+                    document.getElementById('enrolStudent').setAttribute('disabled', 'true');
+                    document.getElementById('accountID').classList.add('is-invalid');
+                    document.getElementById('accountID').classList.remove('is-valid');
+                }
+            }
+        });
+        document.getElementById('roles').addEventListener('change', ()=>{
+            fieldChange();
+        });
+        document.getElementById('creationType').addEventListener('change', ()=>{
+            fieldChange();
+        });
+    </script>
     <script src="/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>

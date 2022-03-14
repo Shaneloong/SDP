@@ -20,7 +20,7 @@ img{
 }
 
 body{
-    background-image: url('/Neptune/SDP/Background/loginBackground.jpg');
+    background-image: url('../Background/loginBackground.jpg');
     background-size: cover;
 }
 
