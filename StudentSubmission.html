@@ -95,11 +95,15 @@
         </div>
     </div>
     <div class="button-container">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >
             Add Submission
         </button>
-        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Submission</button>
-        <button id="remove" type="button" class="btn btn-danger">Remove Submission</button>
+        <button id="Edit" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+            Edit Submission
+        </button>
+        <button id="remove" type="button" class="btn btn-danger" >
+            Remove Submission
+        </button>
     </div>
 </main>
 <!-- Modal -->
@@ -110,18 +114,41 @@
                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form action="">
+            <form action="">
+                <div class="modal-body">
                     <div class="mb-3">
-                        <label for="formFile" class="form-label">Submission Title</label>
-                        <input class="form-control" type="file" id="formFile">
+                        <label for="submit-file" class="form-label">Submission Title</label>
+                        <input name="student-submission" class="form-control" type="file" id="submit-file">
                     </div>
-                </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit File</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save Changes</button>
-            </div>
+            <form action="">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="edit-file" class="form-label">Submission Title</label>
+                        <input name="edit-submission" class="form-control" type="file" id="edit-file">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

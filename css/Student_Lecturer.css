@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    gap: 7rem;
+    gap: 6rem;
 }
 .module-name{
     border-style: groove;
@@ -31,9 +31,22 @@
     cursor: pointer;
     user-select: none;
     text-align: center;
+    background-color: #ADADAD;
 }
-.flx-date1:hover,.flx-date2:hover,.flx-date3:hover,.flx-date4:hover,.flx-date5:hover{
-    background-color: lightblue;
+.flx-date1:hover{
+    background-color: burlywood;
+}
+.flx-date2:hover{
+    background-color: #B8DFD8;
+}
+.flx-date3:hover{
+    background-color: rosybrown;
+}
+.flx-date4:hover{
+    background-color: #ADADAD;
+}
+.flx-date5:hover{
+    background-color: lavenderblush;
 }
 .flex-container{
     display:flex;
@@ -44,7 +57,7 @@
     display: flex;
     flex-direction: column;
 }
-.content1,.content2,.content3{
+.content1,.content2,.content3,.content4{
     user-select: none;
     width: 100%;
 }
@@ -75,6 +88,10 @@
 .table5{
     background-color:lavenderblush;
 }
+#Second-week{
+    display: none;
+}
+
 /*Sign Attendance*/
 .OTP-Container{
     display: flex;
@@ -94,12 +111,19 @@ input[type=number]{
 #title{
     background-color: #ADADAD;
     border-radius: 5px;
-    width: 1000px;
+    width: 100%;
+}
+.sem{
+    width: 75%;
+}
+.percent{
+    width: 20%;
 }
 #overall-attend{
     background-color:whitesmoke;
-    height: 250px;
-    width: 300px;
+    height: auto;
+    width: auto;
+    padding: 1rem;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -111,7 +135,7 @@ input[type=number]{
 }
 #attend-record{
     display: flex;
-    gap: 5rem;
+    gap: 1rem;
 }
 #attend-list{
     gap: 5rem;
@@ -157,6 +181,10 @@ i{
     width: 100%;
     border: 1px solid white;
     border-collapse: collapse;
+    display: none;
+}
+#Edit,#remove{
+    display: none;
 }
 .name-submission,#content-submission1,#content-submission2,#content-submission3{
     background-color: burlywood;

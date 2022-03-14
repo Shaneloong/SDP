@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/Student_Lecturer.css">
-
+    <!-- Jquery Library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Student Timetable</title>
 </head>
 <body style="background-color: floralwhite; background-size: cover">
@@ -24,7 +25,7 @@
                 <a class="navbar-brand" href="#"><img src="/Logo/Full_Final_Neptune_logo.png" class="logo" alt=""></a>
                 <ul class="navbar-nav">
                     <li class="nav-item nav-link">
-                        Student Dashboard
+                        Student Timetable
                     </li>
                 </ul>
             </div>
@@ -49,69 +50,156 @@
     </ul>
 </div>
 <main>
-    <div id="flx-timetable">
-        <div class="flex-container">
-            <div class="flx-child">
-                <div class="flx-date1" onclick="timetable(1)" style="border-top-left-radius: 10px" >Monday,2/22/2022</div>
+    <div>
+        <div class="btn-group" style="padding-bottom: 1rem">
+            <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="Timetable-dropdown">
+                Timetable
+            </button>
+            <ul class="dropdown-menu">
+                <li class="dropdown-item" id="First" style="user-select: none">Current Week</li>
+                <li class="dropdown-item" id="Second" style="user-select: none">Next Week</li>
+            </ul>
+        </div>
+        <div id="First-week">
+            <div class="flex-container">
+                <div class="flx-child">
+                    <div class="flx-date1" onclick="timetable(1)" style="border-top-left-radius: 10px" >Monday,2/22/2022</div>
+                </div>
+                <div class="flx-child">
+                    <div class="flx-date2" onclick="timetable(2)">Tuesday,2/23/2022</div>
+                </div>
+                <div class="flx-child">
+                    <div class="flx-date3" onclick="timetable(3)">Wednesday,2/24/2022</div>
+                </div>
+                <div class="flx-child">
+                    <div class="flx-date4" onclick="timetable(4)">Thursday,2/25/2022</div>
+                </div>
+                <div class="flx-child">
+                    <div class="flx-date5" onclick="timetable(5)" style="border-top-right-radius:10px">Friday,2/26/2022</div>
+                </div>
             </div>
-            <div class="flx-child">
-                <div class="flx-date2" onclick="timetable(2)">Tuesday,2/23/2022</div>
-            </div>
-            <div class="flx-child">
-                <div class="flx-date3" onclick="timetable(3)">Wednesday,2/24/2022</div>
-            </div>
-            <div class="flx-child">
-                <div class="flx-date4" onclick="timetable(4)">Thursday,2/25/2022</div>
-            </div>
-            <div class="flx-child">
-                <div class="flx-date5" onclick="timetable(5)" style="border-top-right-radius:10px">Friday,2/26/2022</div>
+            <div class="flex-container">
+                <div class="table1">
+                    <div class="content1">
+                        <div>Module ID</div>
+                        <div>Module Name</div>
+                        <div>Time Duration</div>
+                    </div>
+                    <div class="content2">Classroom</div>
+                    <div class="content3">Lecturer Name</div>
+                    <div class="content4">Class Type</div>
+                </div>
+                <div class="table2">
+                    <div class="content1">
+                        <div>Module ID</div>
+                        <div>Module Name</div>
+                        <div>Time Duration</div>
+                    </div>
+                    <div class="content2">Classroom</div>
+                    <div class="content3">Lecturer Name</div>
+                    <div class="content4">Class Type</div>
+                </div>
+                <div class="table3">
+                    <div class="content1">
+                        <div>Module ID</div>
+                        <div>Module Name</div>
+                        <div>Time Duration</div>
+                    </div>
+                    <div class="content2">Classroom</div>
+                    <div class="content3">Lecturer Name</div>
+                    <div class="content4">Class Type</div>
+                </div>
+                <div class="table4">
+                    <div class="content1">
+                        <div>Module ID</div>
+                        <div>Module Name</div>
+                        <div>Time Duration</div>
+                    </div>
+                    <div class="content2">Classroom</div>
+                    <div class="content3">Lecturer Name</div>
+                    <div class="content4">Class Type</div>
+                </div>
+                <div class="table5">
+                    <div class="content1">
+                        <div>Module ID</div>
+                        <div>Module Name</div>
+                        <div>Time Duration</div>
+                    </div>
+                    <div class="content2">Classroom</div>
+                    <div class="content3">Lecturer Name</div>
+                    <div class="content4">Class Type</div>
+                </div>
             </div>
         </div>
-        <div class="flex-container">
-            <div class="table1">
-                <div class="content1">
-                    <div>CLass ID</div>
-                    <div>Module Name</div>
-                    <div>Time Duration</div>
+        <div id="Second-week">
+            <div class="flex-container">
+                <div class="flx-child">
+                    <div class="flx-date1" onclick="timetable(1)" style="border-top-left-radius: 10px" >Monday</div>
                 </div>
-                <div class="content2">Classroom</div>
-                <div class="content3">Lecturer Name</div>
+                <div class="flx-child">
+                    <div class="flx-date2" onclick="timetable(2)">Tuesday</div>
+                </div>
+                <div class="flx-child">
+                    <div class="flx-date3" onclick="timetable(3)">Wednesday</div>
+                </div>
+                <div class="flx-child">
+                    <div class="flx-date4" onclick="timetable(4)">Thursday</div>
+                </div>
+                <div class="flx-child">
+                    <div class="flx-date5" onclick="timetable(5)" style="border-top-right-radius:10px">Friday</div>
+                </div>
             </div>
-            <div class="table2">
-                <div class="content1">
-                    <div>CLass ID</div>
-                    <div>Module Name</div>
-                    <div>Time Duration</div>
+            <div class="flex-container">
+                <div class="table1">
+                    <div class="content1">
+                        <div>Module ID</div>
+                        <div>Module Name</div>
+                        <div>Time Duration</div>
+                    </div>
+                    <div class="content2">Classroom</div>
+                    <div class="content3">Lecturer Name</div>
+                    <div class="content4">Class Type</div>
                 </div>
-                <div class="content2">Classroom</div>
-                <div class="content3">Lecturer Name</div>
-            </div>
-            <div class="table3">
-                <div class="content1">
-                    <div>CLass ID</div>
-                    <div>Module Name</div>
-                    <div>Time Duration</div>
+                <div class="table2">
+                    <div class="content1">
+                        <div>Module ID</div>
+                        <div>Module Name</div>
+                        <div>Time Duration</div>
+                    </div>
+                    <div class="content2">Classroom</div>
+                    <div class="content3">Lecturer Name</div>
+                    <div class="content4">Class Type</div>
                 </div>
-                <div class="content2">Classroom</div>
-                <div class="content3">Lecturer Name</div>
-            </div>
-            <div class="table4">
-                <div class="content1">
-                    <div>CLass ID</div>
-                    <div>Module Name</div>
-                    <div>Time Duration</div>
+                <div class="table3">
+                    <div class="content1">
+                        <div>Module ID</div>
+                        <div>Module Name</div>
+                        <div>Time Duration</div>
+                    </div>
+                    <div class="content2">Classroom</div>
+                    <div class="content3">Lecturer Name</div>
+                    <div class="content4">Class Type</div>
                 </div>
-                <div class="content2">Classroom</div>
-                <div class="content3">Lecturer Name</div>
-            </div>
-            <div class="table5">
-                <div class="content1">
-                    <div>CLass ID</div>
-                    <div>Module Name</div>
-                    <div>Time Duration</div>
+                <div class="table4">
+                    <div class="content1">
+                        <div>Module ID</div>
+                        <div>Module Name</div>
+                        <div>Time Duration</div>
+                    </div>
+                    <div class="content2">Classroom</div>
+                    <div class="content3">Lecturer Name</div>
+                    <div class="content4">Class Type</div>
                 </div>
-                <div class="content2">Classroom</div>
-                <div class="content3">Lecturer Name</div>
+                <div class="table5">
+                    <div class="content1">
+                        <div>Module ID</div>
+                        <div>Module Name</div>
+                        <div>Time Duration</div>
+                    </div>
+                    <div class="content2">Classroom</div>
+                    <div class="content3">Lecturer Name</div>
+                    <div class="content4">Class Type</div>
+                </div>
             </div>
         </div>
     </div>

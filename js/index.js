@@ -157,60 +157,60 @@ try {
 }
 function timetable(t){
     if (t == 1){
-        document.querySelector(".flx-date1").style.backgroundColor ="lightblue"
-        document.querySelector(".flx-date2").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date3").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date4").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date5").style.backgroundColor ="inherit"
-        document.querySelector(".table1").style.display = "flex"
-        document.querySelector(".table2").style.display = "none"
-        document.querySelector(".table3").style.display = "none"
-        document.querySelector(".table4").style.display = "none"
-        document.querySelector(".table5").style.display = "none"
+        document.querySelectorAll(".flx-date1").forEach(el => el.style.backgroundColor ="burlywood");
+        document.querySelectorAll(".flx-date2").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date3").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date4").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date5").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".table1").forEach(el => el.style.display = "flex");
+        document.querySelectorAll(".table2").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table3").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table4").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table5").forEach(el => el.style.display = "none");
     }else if (t == 2){
-        document.querySelector(".flx-date1").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date2").style.backgroundColor ="lightblue"
-        document.querySelector(".flx-date3").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date4").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date5").style.backgroundColor ="inherit"
-        document.querySelector(".table1").style.display = "none"
-        document.querySelector(".table2").style.display = "flex"
-        document.querySelector(".table3").style.display = "none"
-        document.querySelector(".table4").style.display = "none"
-        document.querySelector(".table5").style.display = "none"
+        document.querySelectorAll(".flx-date1").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date2").forEach(el => el.style.backgroundColor ="#B8DFD8");
+        document.querySelectorAll(".flx-date3").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date4").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date5").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".table1").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table2").forEach(el => el.style.display = "flex");
+        document.querySelectorAll(".table3").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table4").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table5").forEach(el => el.style.display = "none");
     }else if(t == 3){
-        document.querySelector(".flx-date1").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date2").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date3").style.backgroundColor ="lightblue"
-        document.querySelector(".flx-date4").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date5").style.backgroundColor ="inherit"
-        document.querySelector(".table1").style.display = "none"
-        document.querySelector(".table2").style.display = "none"
-        document.querySelector(".table3").style.display = "flex"
-        document.querySelector(".table4").style.display = "none"
-        document.querySelector(".table5").style.display = "none"
+        document.querySelectorAll(".flx-date1").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date2").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date3").forEach(el => el.style.backgroundColor ="rosybrown");
+        document.querySelectorAll(".flx-date4").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date5").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".table1").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table2").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table3").forEach(el => el.style.display = "flex");
+        document.querySelectorAll(".table4").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table5").forEach(el => el.style.display = "none");
     }else if (t == 4){
-        document.querySelector(".flx-date1").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date2").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date3").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date4").style.backgroundColor ="lightblue"
-        document.querySelector(".flx-date5").style.backgroundColor ="inherit"
-        document.querySelector(".table1").style.display = "none"
-        document.querySelector(".table2").style.display = "none"
-        document.querySelector(".table3").style.display = "none"
-        document.querySelector(".table4").style.display = "flex"
-        document.querySelector(".table5").style.display = "none"
+        document.querySelectorAll(".flx-date1").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date2").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date3").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date4").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date5").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".table1").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table2").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table3").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table4").forEach(el => el.style.display = "flex");
+        document.querySelectorAll(".table5").forEach(el => el.style.display = "none");
     }else if (t == 5){
-        document.querySelector(".flx-date1").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date2").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date3").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date4").style.backgroundColor ="inherit"
-        document.querySelector(".flx-date5").style.backgroundColor ="lightblue"
-        document.querySelector(".table1").style.display = "none"
-        document.querySelector(".table2").style.display = "none"
-        document.querySelector(".table3").style.display = "none"
-        document.querySelector(".table4").style.display = "none"
-        document.querySelector(".table5").style.display = "flex"
+        document.querySelectorAll(".flx-date1").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date2").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date3").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date4").forEach(el => el.style.backgroundColor ="#ADADAD");
+        document.querySelectorAll(".flx-date5").forEach(el => el.style.backgroundColor ="lavenderblush");
+        document.querySelectorAll(".table1").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table2").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table3").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table4").forEach(el => el.style.display = "none");
+        document.querySelectorAll(".table5").forEach(el => el.style.display = "flex");
     }
 }
 function checkOTP(y){
@@ -289,4 +289,19 @@ $(document).ready(function(){
 //Toggle Due date
 $("#toggle-duedate").click(function (){
     $("#Due-Date").parent().toggle();
+})
+
+//Display Current week Timetable according to the dropdown
+$("[id=First]").click(function (){
+    let x = $(this).text();
+    $("[id=Timetable-dropdown]").text("" + x);
+    $("[id=First-week]").fadeIn("slow");
+    $("[id=Second-week]").hide();
+})
+//Display Next week Timetable according to the dropdown
+$("[id=Second]").click(function (){
+    let x = $(this).text();
+    $("[id=Timetable-dropdown]").text("" + x);
+    $("[id=First-week]").hide();
+    $("[id=Second-week]").fadeIn("slow");
 })
