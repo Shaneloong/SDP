@@ -85,7 +85,6 @@
                     </div>
                     <div><a href=""><button class="btn btn-danger">Delete Folder</button></a></div>
                 </div>
-
             </div>
         </div>
         <div>
@@ -125,7 +124,7 @@
             <form action="" method="post">
                 <div class="modal-body">
                     <div>
-                        <select class="form-select" aria-label="Default select example">
+                        <select name="folder" class="form-select" aria-label="Default select example">
                             <option selected>Select Folder</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -136,7 +135,7 @@
                     <br>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Learning Material</label>
-                        <input class="form-control" type="file" id="formFile" multiple onchange="ShowMaterialFilename()">
+                        <input name="learning-material" class="form-control" type="file" id="formFile" multiple onchange="ShowMaterialFilename()">
                         <h6 id="material-name"></h6>
                     </div>
                 </div>
@@ -160,7 +159,7 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="folder-name" class="form-label">FolderName</label>
-                        <input type="name" class="form-control" id="folder-name" placeholder="">
+                        <input name="folder-name" type="text" class="form-control" id="folder-name">
                     </div>
                 </div>
                 <div class="modal-footer">
