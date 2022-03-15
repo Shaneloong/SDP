@@ -1,26 +1,17 @@
 /* Student Dashboard */
-#StudentDash{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    gap: 6rem;
+.dashboard-container{
+    display: grid;
+    grid-template-columns: repeat(4, 23%);
+    width: auto;
+    justify-items: center;
+    gap: 15px;
+    margin-left: 45px;
 }
-.module-name{
-    border-style: groove;
-    border-width: thin;
-    background-color: lightgoldenrodyellow;
+
+.course-card{
+    width: 20rem;
 }
-.mod{
-    padding: 1rem;
-}
-.module-container{
-    display: flex;
-    flex-direction: column;
-}
-#StudentDash a {
-    text-decoration: none;
-    color: inherit;
-}
+
 /* Timetable for student and lecturer */
 .flx-child{
     width: 100%;

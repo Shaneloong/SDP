@@ -9,18 +9,13 @@ let OTPgenerated;
 let OTP;
 let otpInterval;
 
-$(document).ready(()=>{
-    OTPchecker();
-    $('#OTPswitch').change(function(){
-        OTPchecker();
-    })
-})
 
 function OTPchecker(){
     if(OTPSwitch.checked){
         $('.countdown-timer').removeClass('hidden');
         $('.otp-bar').removeClass('hidden');
         $('.recent-student').removeClass('hidden');
+        $('#attendance-record-section').addClass('hidden');
         OTPgenerator();
         otpInterval = setInterval(OTPgenerator, 180000);
         timerInterval = setInterval(runTimer, 1000);
@@ -31,6 +26,7 @@ function OTPchecker(){
         $('.countdown-timer').addClass('hidden');
         $('.otp-bar').addClass('hidden');
         $('.recent-student').addClass('hidden');
+        $('#attendance-record-section').removeClass('hidden');
     }
 }
 

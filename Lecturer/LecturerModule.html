@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/Student_Lecturer.css">
     <!-- Jquery Library-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Module Submission</title>
+    <title>Lecturer Module</title>
 </head>
 <body style="background-color: floralwhite; background-size: cover">
 <!-- Top Nav Bar -->
@@ -25,13 +25,18 @@
                 <a class="navbar-brand" href="#"><img src="/Logo/Full_Final_Neptune_logo.png" class="logo" alt=""></a>
                 <ul class="navbar-nav">
                     <li class="nav-item nav-link">
-                        Module Submission
+                        Lecturer Module
                     </li>
                 </ul>
             </div>
-            <button class="btn flex-button btn-primary ms-auto me-lg-5">
+            <button class="btn flex-button btn-primary ms-auto me-lg-5" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="uil uil-user"></i>
             </button>
+            <ul class="dropdown-menu dropdown-menu-end me-5">
+                <li class="dropdown-item">UserName</li>
+                <li><a class="dropdown-item" href="../Changepassword.html">Change Password</a></li>
+                <li><a class="dropdown-item" href="#">Log Out</a></li>
+            </ul>
         </div>
     </nav>
 </header>
@@ -39,31 +44,33 @@
 <div class="sidebar-menu show-sidebar">
     <ul class="sidebar-content">
         <li class="nav-item">
-            <a href="StudentDashboard.html" class="nav-link sidebar-btn">Dashboard</a>
+            <a href="LecturerDashboard.html" class="nav-link sidebar-btn">Dashboard</a>
         </li>
         <li class="nav-item">
-            <a href="Timetable%20Student.html" class="nav-link sidebar-btn">Timetable</a>
+            <a href="Timetable_Lecturer.html" class="nav-link sidebar-btn">Timetable</a>
         </li>
         <li class="nav-item">
-            <a href="attendance%20Record.html" class="nav-link sidebar-btn">Attendance</a>
+            <a href="LecturerViewAttendance.html" class="nav-link sidebar-btn">Attendance</a>
         </li>
     </ul>
 </div>
 <!-- Main Content -->
 <main>
-    <div class="submission-page">
-        <div>
-            <h5><u>Submission Tittle - CLassID</u></h5>
-            <div class="instruction">
-                <h5><u>Instruction</u></h5>
-                <p>It is a long-established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    <div id="module-content">
+        <div id="module-container">
+            <div class="title-name" style="display: flex">
+                <div style="font-size: 24px" >Learning Materials</div>
+                <div>
+                    <button id="Add-Material" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Material</button>
+                    <button id="Add-folder" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#folder">Add Folder</button>
+                </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button id="folder-butt" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <div class="folder-name">
                             <i class="uil uil-folder"></i>
-                            <div class="file-name">Submission Materials</div>
+                            <div class="file-name">Tutorial week 1</div>
                         </div>
                     </button>
                 </h2>
@@ -75,78 +82,94 @@
                                     <i class="uil uil-file-download-alt"></i>
                                     <div class="file-name">An item</div>
                                 </div>
+                                <div>
+                                    <i id="remove-material" class="uil uil-trash-alt"></i>
+                                </div>
                             </li>
                         </ul>
                     </div>
+                    <div><a href=""><button class="btn btn-danger">Delete Folder</button></a></div>
                 </div>
             </div>
         </div>
         <div>
-            <table id="student-submission">
-                <tr>
-                    <td class="name-submission">Submission Status</td>
-                    <td id="content-submission1"></td>
-                </tr>
-                <tr>
-                    <td class="name-submission">File Submission</td>
-                    <td id="content-submission2"></td>
-                </tr>
-            </table>
+            <div class="title-name">
+                <div style="font-size: 24px">
+                    Submission
+                </div>
+                <div>
+                    <a href="CreateSubmission.html" target="_blank"><button class="btn btn-success">Create Submission</button></a>
+                </div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" style="justify-content: space-between">
+                    <div style="display: flex;align-items: center;gap: 1rem">
+                        <i  class="uil uil-file-upload-alt"></i>
+                        <a href="LecturerSubmissionPage.html"><div class="file-name">An item</div></a>
+                    </div>
+                    <div>
+                        <i id="remove-sub" class="uil uil-trash-alt"></i>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-    <div class="button-container">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-            Add Submission
-        </button>
-        <button id="Edit" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
-            Edit Submission
-        </button>
-        <button id="remove" type="button" class="btn btn-danger" >
-            Remove Submission
-        </button>
+    <div>
+
     </div>
 </main>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog ">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" method="post" >
+            <form action="" method="post">
                 <div class="modal-body">
+                    <div>
+                        <select name="folder" class="form-select" aria-label="Default select example">
+                            <option selected>Select Folder</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="">Without Folder</option>
+                        </select>
+                    </div>
+                    <br>
                     <div class="mb-3">
-                        <label for="submit-file" class="form-label">Submission Title</label>
-                        <input name="student-submission" class="form-control" type="file" id="submit-file">
+                        <label for="formFile" class="form-label">Learning Material</label>
+                        <input name="learning-material" class="form-control" type="file" id="formFile" multiple onchange="ShowMaterialFilename()">
+                        <h6 id="material-name"></h6>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Submit File</button>
+                    <button type="submit" class="btn btn-primary">Add Material</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Modal2 -->
+<div class="modal fade" id="folder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <h5 class="modal-title" id="folderLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="">
+            <form action="" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="edit-file" class="form-label">Submission Title</label>
-                        <input name="edit-submission" class="form-control" type="file" id="edit-file">
+                        <label for="folder-name" class="form-label">FolderName</label>
+                        <input name="folder-name" type="text" class="form-control" id="folder-name">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save Changes</button>
+                    <button type="submit" class="btn btn-primary">Add folder</button>
                 </div>
             </form>
         </div>

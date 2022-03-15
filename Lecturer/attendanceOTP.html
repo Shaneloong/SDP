@@ -24,6 +24,10 @@
             width: 3.5rem;
             height: 1.75rem;
         }
+        #class-intake{
+            border-collapse: collapse;
+            border-radius: 8px;
+        }
     </style>
 
     <title>Attendance</title>
@@ -71,7 +75,6 @@
                 </div>
                 <div class="col mb-4">
                     <div class="flex-group">
-                        <h1 class="mx-auto">Attendance OTP</h1>
                         <div class="form-control ms-auto w-auto">
                             <div class="d-flex mb-2 mt-1 gap-3 align-items-center form-switch form-switch-lg">
                                 <input class="form-check-input" type="checkbox" role="switch" checked id="OTPswitch">
@@ -84,22 +87,46 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="row">
-                        <div class="col-6 mb-4">
+                    <div class="row row-cols-2 flex-wrap">
+                        <div class="col mb-4">
                             <label for="classID" class="form-label">Class Selection</label>
                             <input type="text" class="form-control" id="classID" readonly>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 mb-4">
+                        <div class="col mb-4">
                             <label for="classType" class="form-label">Class Type</label>
                             <input type="text" class="form-control" id="classType" name="classType" readonly>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 mb-4">
-                            <label for="defaultAttendance" class="form-label">Mark all student as</label>
+                        <div class="col-12 mb-4">
+                            <label for="defaultAttendance" class="form-label">Module</label>
                             <input type="text" class="form-control" id="defaultAttendance" name="defaultAttendance" readonly>
+                        </div>
+                        <div class="col mb-4">
+                            <label for="defaultAttendance" class="form-label">Commencement Date</label>
+                            <input type="text" class="form-control" id="defaultAttendance" name="defaultAttendance" readonly>
+                        </div>
+                        <div class="col mb-4">
+                            <label for="defaultAttendance" class="form-label">Completion Date</label>
+                            <input type="text" class="form-control" id="defaultAttendance" name="defaultAttendance" readonly>
+                        </div>
+                        <div class="col-12 my-4">
+                            <table class="table table-responsive align-middle bg-secondary bg-gradient text-white" id="class-intake">
+                                <tr>
+                                    <td class="text-center">
+                                        Intake
+                                    </td>
+                                    <td>
+                                        <div class="flex-group flex-column">
+                                            <div>UCDF2005ICT</div>
+                                            <div>UCDF2005ICT</div>
+                                            <div>UCDF2005ICT</div>
+                                            <div>UCDF2005ICT</div>
+                                        </div> 
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#attendanceModal">Mark All As</button>
                         </div>
                     </div>
                 </div>
@@ -143,6 +170,23 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="attendanceModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Mark All As</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column">
+                            <button class="btn mb-4" style="background-color: #40F54F; color: #fff;">Present</button>
+                            <button class="btn mb-4" style="background-color: #DD4A48; color: #fff;">Absent</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid recent-student">
             <div class="my-3">Recent accessed student</div>
             <div class="d-flex flex-wrap">
@@ -164,9 +208,8 @@
                 <div class="border rounded-pill px-2 me-3 mb-2 py-1">Tan Xiu Haw</div>
             </div>
         </div>
-        <div class="container-fluid">
-                <h1 class="mt-5">Attendance Record</h1>
-            </div>
+        <div class="container-fluid hidden" id="attendance-record-section">
+            <h1 class="mt-5">Attendance Record</h1>
             <table class="table my-5 table-responsive table-striped align-middle" id="attendance-record">
                 <thead>
                     <th>Student ID</th>
@@ -211,6 +254,7 @@
 
     <!-- JS Dependency -->
     <script>
+        // Chart JS configuration
         const attendanceLabel = [
                 'Present',
                 'Absent'
@@ -236,6 +280,15 @@
                 data: attendanceData
             };
         const attendanceChart= new Chart(document.getElementById('attendance-chart'), attendanceConfig);
+
+        // OTP checker
+        $(document).ready(()=>{
+            OTPchecker();
+            $('#OTPswitch').change(function(){
+                OTPchecker();
+            })
+        })
+
     </script>
     <script src="/js/attendanceOTP.js"></script>
     <script src="/js/index.js"></script>

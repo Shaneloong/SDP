@@ -39,9 +39,14 @@
                         </li>
                     </ul>                  
                 </div>
-                <button class="btn flex-button btn-primary ms-auto me-lg-5">
+                <button class="btn flex-button btn-primary ms-auto me-lg-5" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="uil uil-user"></i>
                 </button>
+                <ul class="dropdown-menu dropdown-menu-end me-5">
+                    <li class="dropdown-item">UserName</li>
+                    <li><a class="dropdown-item" href="../Changepassword.html">Change Password</a></li>
+                    <li><a class="dropdown-item" href="#">Log Out</a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -222,20 +227,26 @@
                                 <div class="accordion" id="Sem5-accordion">
                                     <div class="accordion-item">
                                         <div class="accordion-header" id="header-subject-name">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#subject_name" aria-expanded="true" aria-controls="collapseOne">
-                                                Accordion Item #1
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subject_name" aria-expanded="false" aria-controls="collapseOne">
+                                                Subject Name
                                             </button>
                                         </div>
-                                        <div id="subject_name" class="accordion-collapse collapse show" aria-labelledby="header-subject-name" data-bs-parent="#Sem5-accordion">
+                                        <div id="subject_name" class="accordion-collapse collapse" aria-labelledby="header-subject-name" data-bs-parent="#Sem5-accordion">
                                             <div class="accordion-body">
-                                                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                <table class="table table-striped table-responsive align-middle">
+                                                    <thead>
+                                                        <td>Class Type</td>
+                                                        <td>Attendance Status</td>
+                                                        <td>Date</td>
+                                                    </thead>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <div class="accordion-header" id="header-subject-name1">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subject_name1" aria-expanded="false" aria-controls="collapseOne">
-                                                Accordion Item #1
+                                                Subject Name
                                             </button>
                                         </div>
                                         <div id="subject_name1" class="accordion-collapse collapse " aria-labelledby="header-subject-name1" data-bs-parent="#Sem5-accordion">
@@ -244,7 +255,7 @@
                                                     <tr>
                                                         <td>Class Type</td>
                                                         <td>Attendance Status</td>
-                                                        <td></td>
+                                                        <td>Date</td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -253,12 +264,18 @@
                                     <div class="accordion-item">
                                         <div class="accordion-header" id="header-subject-name2">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#subject_name2" aria-expanded="false" aria-controls="collapseOne">
-                                                Accordion Item #1
+                                                Subject Name
                                             </button>
                                         </div>
                                         <div id="subject_name2" class="accordion-collapse collapse " aria-labelledby="header-subject-name2" data-bs-parent="#Sem5-accordion">
                                             <div class="accordion-body">
-                                                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                <table class="table table-striped align-middle">
+                                                    <tr>
+                                                        <td>Class Type</td>
+                                                        <td>Attendance Status</td>
+                                                        <td>Date</td>
+                                                    </tr>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
